@@ -1,13 +1,347 @@
-<!DOCTYPE html>
-<html lang="es">
+<!doctype html>
+<html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>HTML</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="estilo.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Mario López Segura · Full stack developer</title>
+  <meta name="description" content="Mario López Segura, full stack developer at Jisap in Lorca, Spain. Game streaming over WebRTC, C++, C#, TypeScript, Angular and Dynamics AX.">
+  <meta name="theme-color" content="#07090f">
+  <meta property="og:title" content="Mario López Segura · Full stack developer">
+  <meta property="og:description" content="Game streaming over WebRTC, C++, C#, TypeScript, Angular and Dynamics AX.">
+  <meta property="og:image" content="https://avatars.githubusercontent.com/u/90263997?v=4">
+  <meta property="og:type" content="website">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
 </head>
-
 <body>
-  <p>Esta página web es una página HTML válida.</p>
+  <div class="progress" id="progress" aria-hidden="true"></div>
+
+  <header class="nav" id="nav">
+    <a class="nav-logo" href="#top" aria-label="Home">
+      <span class="logo-mark">M</span><span class="logo-text">mlopezsegura</span>
+    </a>
+    <nav class="nav-links" aria-label="Sections">
+      <a href="#about" data-i18n="nav.about">About</a>
+      <a href="#projects" data-i18n="nav.projects">Projects</a>
+      <a href="#work" data-i18n="nav.work">Work</a>
+      <a href="#skills" data-i18n="nav.skills">Skills</a>
+      <a href="#contact" data-i18n="nav.contact">Contact</a>
+    </nav>
+    <button type="button" class="lang" id="lang" aria-label="Cambiar a español">ES</button>
+  </header>
+
+  <main id="top">
+    <!-- Hero -->
+    <section class="hero">
+      <canvas id="streams" aria-hidden="true"></canvas>
+      <div class="hero-inner">
+        <div class="avatar-wrap reveal">
+          <div class="avatar-ring"></div>
+          <img class="avatar" src="https://avatars.githubusercontent.com/u/90263997?v=4" alt="Mario López Segura" width="160" height="160">
+          <span class="live-dot"><span></span>LIVE</span>
+        </div>
+        <p class="eyebrow reveal" data-i18n="hero.hello">Hi, I'm</p>
+        <h1 class="hero-name" id="hero-name" aria-label="Mario López Segura">Mario López Segura</h1>
+        <p class="hero-role reveal">
+          <span class="mono">&gt;</span>
+          <span id="typed" aria-live="polite"></span><span class="caret" aria-hidden="true"></span>
+        </p>
+        <p class="hero-sub reveal" data-i18n="hero.sub">Full stack developer at <strong>Jisap</strong>. I build business software by day and stream games across screens by night: C++, C#, TypeScript, WebRTC and WebAssembly.</p>
+        <div class="hero-meta reveal">
+          <span class="chip" data-i18n="hero.loc">📍 Lorca, Murcia · Spain</span>
+          <span class="chip" data-i18n="hero.since">On GitHub since 2021</span>
+        </div>
+        <div class="hero-cta reveal">
+          <a class="btn primary magnetic" href="#projects" data-i18n="hero.cta">See my projects</a>
+          <a class="btn ghost magnetic" href="https://github.com/mlopezsegura" target="_blank" rel="noopener">GitHub ↗</a>
+        </div>
+      </div>
+      <a class="scroll-hint" href="#about" aria-label="Scroll"><span></span></a>
+    </section>
+
+    <!-- Stats -->
+    <section class="stats">
+      <div class="stat reveal">
+        <span class="stat-value"><span class="count" data-to="4">0</span>K</span>
+        <span class="stat-label" data-i18n="stats.res">resolution streamed to a TV</span>
+      </div>
+      <div class="stat reveal">
+        <span class="stat-value"><span class="count" data-to="120">0</span></span>
+        <span class="stat-label" data-i18n="stats.fps">frames per second, with HDR</span>
+      </div>
+      <div class="stat reveal">
+        <span class="stat-value"><span class="count" data-to="3">0</span></span>
+        <span class="stat-label" data-i18n="stats.screens">screens: PC, TV and browser</span>
+      </div>
+      <div class="stat reveal">
+        <span class="stat-value"><span class="count" data-to="11" id="repo-count">0</span></span>
+        <span class="stat-label" data-i18n="stats.repos">public repositories</span>
+      </div>
+    </section>
+
+    <!-- About -->
+    <section class="section" id="about">
+      <div class="section-head reveal">
+        <span class="section-index">01</span>
+        <h2 data-i18n="about.title">About me</h2>
+      </div>
+      <div class="about-grid">
+        <div class="about-text reveal">
+          <p data-i18n="about.p1">I'm a full stack developer at <strong>Jisap</strong>, a business group based in Lorca, Spain. My day-to-day goes from the ERP core to the screens people use: Microsoft Dynamics AX and X++, .NET APIs, SQL Server, and Angular and Ionic front ends.</p>
+          <p data-i18n="about.p2">Outside work I love making games travel from a PC to any screen with as little latency as possible. That curiosity turned into a set of open-source projects around <strong>Sunshine</strong>, <strong>Moonlight</strong> and <strong>WebRTC</strong>: from a C++ streaming host to a Samsung TV app and a browser client with a WebAssembly core.</p>
+          <p data-i18n="about.p3">I enjoy the whole stack, from encoder pipelines and network protocols to the last pixel of a user interface.</p>
+        </div>
+        <div class="terminal reveal" aria-hidden="true">
+          <div class="terminal-bar"><i></i><i></i><i></i><span>mario@lorca: ~</span></div>
+          <pre class="terminal-body" id="terminal"></pre>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects -->
+    <section class="section" id="projects">
+      <div class="section-head reveal">
+        <span class="section-index">02</span>
+        <h2 data-i18n="projects.title">Featured projects</h2>
+      </div>
+
+      <div class="pipeline reveal">
+        <div class="pipeline-copy">
+          <h3 data-i18n="pipeline.title">Moonlight WebRTC: a game, any screen</h3>
+          <p data-i18n="pipeline.text">Sunshine captures and encodes the game, then sends it over WebRTC straight to a Samsung TV or a web browser. No extra hop on the PC, so frames arrive sooner and more evenly.</p>
+        </div>
+        <svg class="pipeline-svg" viewBox="0 0 900 300" role="img" aria-labelledby="pipeline-title">
+          <title id="pipeline-title">Gaming PC streaming to a TV and a browser over WebRTC</title>
+          <defs>
+            <linearGradient id="g-line" x1="0" x2="1">
+              <stop offset="0" stop-color="#3ee0cf"/>
+              <stop offset="1" stop-color="#8b7bff"/>
+            </linearGradient>
+            <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+              <feGaussianBlur stdDeviation="4" result="b"/>
+              <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+            </filter>
+          </defs>
+
+          <!-- PC -->
+          <rect class="node" x="20" y="60" width="330" height="180" rx="18"/>
+          <text class="node-title" x="40" y="92">Gaming PC · Sunshine-Web-RTC</text>
+          <g class="stage s1"><rect x="40" y="120" width="88" height="70" rx="12"/><text x="84" y="161">Capture</text></g>
+          <g class="stage s2"><rect x="146" y="120" width="88" height="70" rx="12"/><text x="190" y="161">Encode</text></g>
+          <g class="stage s3"><rect x="252" y="120" width="80" height="70" rx="12"/><text x="292" y="161">WebRTC</text></g>
+          <text class="node-note" x="40" y="222">HEVC · AV1 · HDR · Opus</text>
+
+          <!-- Links -->
+          <path id="p-tv" class="link" d="M350 135 C 480 135, 520 70, 650 70"/>
+          <path id="p-web" class="link" d="M350 165 C 480 165, 520 230, 650 230"/>
+
+          <!-- TV -->
+          <rect class="node" x="650" y="20" width="230" height="110" rx="18"/>
+          <rect class="screen" x="672" y="42" width="120" height="66" rx="6"/>
+          <text class="node-title" x="806" y="70">Samsung</text>
+          <text class="node-title" x="806" y="90">Tizen TV</text>
+
+          <!-- Browser -->
+          <rect class="node" x="650" y="170" width="230" height="110" rx="18"/>
+          <rect class="screen" x="672" y="192" width="120" height="66" rx="6"/>
+          <circle class="dot" cx="682" cy="200" r="3"/><circle class="dot" cx="692" cy="200" r="3"/><circle class="dot" cx="702" cy="200" r="3"/>
+          <text class="node-title" x="806" y="220">Web</text>
+          <text class="node-title" x="806" y="240">browser</text>
+
+          <!-- Packets -->
+          <g filter="url(#glow)">
+            <rect class="packet" width="14" height="8" rx="3" x="-7" y="-4"><animateMotion dur="1.6s" repeatCount="indefinite" rotate="auto"><mpath href="#p-tv"/></animateMotion></rect>
+            <rect class="packet" width="14" height="8" rx="3" x="-7" y="-4"><animateMotion dur="1.6s" begin="0.4s" repeatCount="indefinite" rotate="auto"><mpath href="#p-tv"/></animateMotion></rect>
+            <rect class="packet" width="14" height="8" rx="3" x="-7" y="-4"><animateMotion dur="1.6s" begin="0.8s" repeatCount="indefinite" rotate="auto"><mpath href="#p-tv"/></animateMotion></rect>
+            <rect class="packet" width="14" height="8" rx="3" x="-7" y="-4"><animateMotion dur="1.6s" begin="1.2s" repeatCount="indefinite" rotate="auto"><mpath href="#p-tv"/></animateMotion></rect>
+            <rect class="packet alt" width="14" height="8" rx="3" x="-7" y="-4"><animateMotion dur="1.6s" begin="0.2s" repeatCount="indefinite" rotate="auto"><mpath href="#p-web"/></animateMotion></rect>
+            <rect class="packet alt" width="14" height="8" rx="3" x="-7" y="-4"><animateMotion dur="1.6s" begin="0.6s" repeatCount="indefinite" rotate="auto"><mpath href="#p-web"/></animateMotion></rect>
+            <rect class="packet alt" width="14" height="8" rx="3" x="-7" y="-4"><animateMotion dur="1.6s" begin="1.0s" repeatCount="indefinite" rotate="auto"><mpath href="#p-web"/></animateMotion></rect>
+            <rect class="packet alt" width="14" height="8" rx="3" x="-7" y="-4"><animateMotion dur="1.6s" begin="1.4s" repeatCount="indefinite" rotate="auto"><mpath href="#p-web"/></animateMotion></rect>
+          </g>
+        </svg>
+      </div>
+
+      <div class="cards">
+        <article class="card tilt reveal">
+          <div class="card-glow"></div>
+          <div class="card-top">
+            <span class="card-icon">🖥️</span>
+            <span class="card-lang">C++</span>
+          </div>
+          <h3>Sunshine-Web-RTC</h3>
+          <p data-i18n="p.sunshine">A Sunshine build with a WebRTC server inside. It captures, encodes and sends the game straight to TVs and browsers, without the GameStream round trip a separate gateway needed.</p>
+          <ul class="card-points">
+            <li data-i18n="p.sunshine.1">Encoder keyframes on demand, HEVC Main10 and AV1 10-bit HDR</li>
+            <li data-i18n="p.sunshine.2">Moonlight-style PIN pairing in Sunshine's Web UI</li>
+            <li data-i18n="p.sunshine.3">LAN discovery and Wake-on-LAN address announcement</li>
+          </ul>
+          <div class="tags"><span>C++</span><span>libdatachannel</span><span>WebRTC</span><span>CMake</span></div>
+          <a class="card-link" href="https://github.com/mlopezsegura/Sunshine-Web-RTC" target="_blank" rel="noopener" data-i18n="p.repo">View repository ↗</a>
+        </article>
+
+        <article class="card tilt reveal">
+          <div class="card-glow"></div>
+          <div class="card-top">
+            <span class="card-icon">📺</span>
+            <span class="card-lang">JavaScript · WASM</span>
+          </div>
+          <h3>Moonlight WebRTC for Samsung TVs</h3>
+          <p data-i18n="p.tizen">A TV-first app that plays PC games on Samsung Tizen TVs at up to 4K and 120 FPS with HDR, gamepads and rumble, decoded in hardware by the TV.</p>
+          <ul class="card-points">
+            <li data-i18n="p.tizen.1">Picks the highest frame rate the TV's decoder sustains</li>
+            <li data-i18n="p.tizen.2">Wake-on-LAN and PC discovery from a WebAssembly module</li>
+            <li data-i18n="p.tizen.3">Update notices from GitHub releases</li>
+          </ul>
+          <div class="tags"><span>Tizen</span><span>WebRTC</span><span>WebAssembly</span><span>Emscripten</span></div>
+          <a class="card-link" href="https://github.com/mlopezsegura/Monlight-Tizen-WebRtc-Client" target="_blank" rel="noopener" data-i18n="p.repo">View repository ↗</a>
+        </article>
+
+        <article class="card tilt reveal">
+          <div class="card-glow"></div>
+          <div class="card-top">
+            <span class="card-icon">🌐</span>
+            <span class="card-lang">JavaScript · C</span>
+          </div>
+          <h3>Moonlight WebRTC Web</h3>
+          <p data-i18n="p.web">Play in any desktop browser. Video goes through the browser's hardware WebRTC pipeline, while a 25 KB WebAssembly core handles authentication and gamepad input.</p>
+          <ul class="card-points">
+            <li data-i18n="p.web.1">Zero dependencies, nothing to install where you play</li>
+            <li data-i18n="p.web.2">Gamepad polling every 4 ms with no garbage collection pauses</li>
+            <li data-i18n="p.web.3">Picks only the codecs the browser can decode</li>
+          </ul>
+          <div class="tags"><span>WebAssembly</span><span>C</span><span>WebRTC</span><span>Gamepad API</span></div>
+          <a class="card-link" href="https://github.com/mlopezsegura/moonlight-webrtc-web" target="_blank" rel="noopener" data-i18n="p.repo">View repository ↗</a>
+        </article>
+
+        <article class="card tilt reveal">
+          <div class="card-glow"></div>
+          <div class="card-top">
+            <span class="card-icon">🎮</span>
+            <span class="card-lang">C# · .NET</span>
+          </div>
+          <h3>OpenStreamMS</h3>
+          <p data-i18n="p.osms">An open multiseat alternative: a Windows service that runs isolated game streaming sessions, each with its own Windows user, RDP session and Sunshine instance.</p>
+          <ul class="card-points">
+            <li data-i18n="p.osms.1">Web dashboard and REST API with OpenAPI docs</li>
+            <li data-i18n="p.osms.2">Restarts Sunshine automatically if it crashes</li>
+            <li data-i18n="p.osms.3">Virtual display support, tray icon and installer</li>
+          </ul>
+          <div class="tags"><span>.NET 10</span><span>ASP.NET Core</span><span>Windows service</span><span>RDP</span></div>
+          <a class="card-link" href="https://github.com/mlopezsegura/OpenStreamMS" target="_blank" rel="noopener" data-i18n="p.repo">View repository ↗</a>
+        </article>
+      </div>
+    </section>
+
+    <!-- Work -->
+    <section class="section" id="work">
+      <div class="section-head reveal">
+        <span class="section-index">03</span>
+        <h2 data-i18n="work.title">Work at Jisap</h2>
+      </div>
+      <div class="work">
+        <div class="work-intro reveal">
+          <span class="role-badge" data-i18n="work.role">Full stack developer</span>
+          <p data-i18n="work.text">Business software for a multi-company group: the ERP behind the operation and the web and mobile apps people use every day.</p>
+        </div>
+        <ol class="layers">
+          <li class="layer reveal">
+            <span class="layer-tag">UI</span>
+            <div>
+              <h4 data-i18n="work.l1">Web and mobile apps</h4>
+              <p>Angular · Ionic · TypeScript · Kendo UI</p>
+            </div>
+          </li>
+          <li class="layer reveal">
+            <span class="layer-tag">API</span>
+            <div>
+              <h4 data-i18n="work.l2">Services and integration</h4>
+              <p>.NET · C# · REST · Dapper</p>
+            </div>
+          </li>
+          <li class="layer reveal">
+            <span class="layer-tag">ERP</span>
+            <div>
+              <h4 data-i18n="work.l3">ERP development</h4>
+              <p>Microsoft Dynamics AX 2009 / 2012 · X++ · Business Connector</p>
+            </div>
+          </li>
+          <li class="layer reveal">
+            <span class="layer-tag">DATA</span>
+            <div>
+              <h4 data-i18n="work.l4">Data</h4>
+              <p>SQL Server</p>
+            </div>
+          </li>
+        </ol>
+        <p class="work-note reveal" data-i18n="work.note">Recent focus: bringing ERP screens from X++ to modern Angular web apps backed by .NET APIs.</p>
+      </div>
+    </section>
+
+    <!-- Skills -->
+    <section class="section" id="skills">
+      <div class="section-head reveal">
+        <span class="section-index">04</span>
+        <h2 data-i18n="skills.title">Toolbox</h2>
+      </div>
+      <div class="marquee" aria-hidden="true">
+        <div class="marquee-track">
+          <span>C++</span><span>C#</span><span>TypeScript</span><span>JavaScript</span><span>C</span><span>X++</span><span>SQL</span><span>Angular</span><span>Ionic</span><span>.NET</span><span>WebRTC</span><span>WebAssembly</span><span>Docker</span><span>Git</span>
+          <span>C++</span><span>C#</span><span>TypeScript</span><span>JavaScript</span><span>C</span><span>X++</span><span>SQL</span><span>Angular</span><span>Ionic</span><span>.NET</span><span>WebRTC</span><span>WebAssembly</span><span>Docker</span><span>Git</span>
+        </div>
+      </div>
+      <div class="skill-groups">
+        <div class="skill-group reveal">
+          <h4 data-i18n="skills.systems">Systems &amp; streaming</h4>
+          <div class="tags"><span>C++</span><span>C</span><span>CMake</span><span>vcpkg</span><span>WebRTC</span><span>H.264 / HEVC / AV1</span></div>
+        </div>
+        <div class="skill-group reveal">
+          <h4 data-i18n="skills.web">Front end</h4>
+          <div class="tags"><span>TypeScript</span><span>Angular</span><span>Ionic</span><span>WebAssembly</span><span>Emscripten</span><span>Tizen</span></div>
+        </div>
+        <div class="skill-group reveal">
+          <h4 data-i18n="skills.back">Back end</h4>
+          <div class="tags"><span>C# / .NET</span><span>ASP.NET</span><span>REST / OpenAPI</span><span>Dapper</span><span>SQL Server</span></div>
+        </div>
+        <div class="skill-group reveal">
+          <h4 data-i18n="skills.erp">ERP &amp; tooling</h4>
+          <div class="tags"><span>Dynamics AX</span><span>X++</span><span>Docker</span><span>Git</span><span>Inno Setup</span><span>Windows services</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- GitHub -->
+    <section class="section" id="github">
+      <div class="section-head reveal">
+        <span class="section-index">05</span>
+        <h2 data-i18n="gh.title">Latest on GitHub</h2>
+      </div>
+      <div class="repos" id="repos">
+        <p class="muted" data-i18n="gh.loading">Loading repositories…</p>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section class="section contact" id="contact">
+      <div class="contact-card reveal">
+        <h2 data-i18n="contact.title">Let's talk</h2>
+        <p data-i18n="contact.text">Questions about a project, an idea to stream something somewhere, or just to say hi.</p>
+        <div class="hero-cta">
+          <a class="btn primary magnetic" href="https://github.com/mlopezsegura" target="_blank" rel="noopener">GitHub ↗</a>
+          <a class="btn ghost magnetic" href="https://x.com/legenwario" target="_blank" rel="noopener">X · @legenwario ↗</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <span>© <span id="year">2026</span> Mario López Segura</span>
+    <span class="muted" data-i18n="footer.made">Hand-made with HTML, CSS and a bit of JavaScript.</span>
+  </footer>
+
+  <script src="assets/js/main.js" defer></script>
 </body>
 </html>
