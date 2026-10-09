@@ -625,7 +625,29 @@ strong { color: #fff; font-weight: 600; }
 }
 .company h3 { margin: 14px 0 10px; font-size: 1.6rem; }
 .company p { margin: 0 0 12px; color: #c5ccda; }
+.company-visual { display: grid; gap: 16px; }
+.sectors { display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; }
+.sector {
+  padding: 6px 14px;
+  border-radius: 999px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  border: 1px solid;
+}
+.s-livestock { color: var(--violet); border-color: rgba(139, 123, 255, 0.5); background: rgba(139, 123, 255, 0.1); }
+.s-meat { color: var(--pink); border-color: rgba(255, 111, 174, 0.5); background: rgba(255, 111, 174, 0.1); }
+.s-agri { color: var(--cyan); border-color: rgba(62, 224, 207, 0.5); background: rgba(62, 224, 207, 0.1); }
 .farm { width: 100%; height: auto; overflow: visible; }
+.farm .plant path { fill: rgba(255, 111, 174, 0.14); stroke: rgba(255, 111, 174, 0.75); stroke-width: 2; stroke-linejoin: round; }
+.farm .chimney { fill: rgba(255, 111, 174, 0.3); stroke: rgba(255, 111, 174, 0.75); }
+.farm .steam { fill: rgba(255, 255, 255, 0.35); opacity: 0; transform-box: fill-box; transform-origin: center; animation: steam 2.6s ease-out infinite; }
+.farm .steam + .steam { animation-delay: 1.3s; }
+@keyframes steam { 0% { opacity: 0; transform: translate(0, 0) scale(0.6); } 30% { opacity: 0.7; } 100% { opacity: 0; transform: translate(10px, -30px) scale(1.6); } }
+.farm .crops path { fill: none; stroke: var(--cyan); stroke-width: 2.5; stroke-linecap: round; transform-box: fill-box; transform-origin: bottom; animation: sway 3s ease-in-out infinite alternate; }
+.farm .crops path:nth-child(2) { animation-delay: 0.4s; }
+.farm .crops path:nth-child(3) { animation-delay: 0.8s; }
+.farm .crops path:nth-child(4) { animation-delay: 1.2s; }
+@keyframes sway { from { transform: rotate(-4deg); } to { transform: rotate(4deg); } }
 .farm .hill { fill: rgba(62, 224, 207, 0.08); }
 .farm .barn path:first-child { fill: rgba(139, 123, 255, 0.18); stroke: rgba(139, 123, 255, 0.7); stroke-width: 2; }
 .farm .barn-door { fill: rgba(7, 9, 15, 0.7); stroke: rgba(139, 123, 255, 0.7); }

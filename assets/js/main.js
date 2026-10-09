@@ -17,7 +17,7 @@
     "nav.skills": "Habilidades",
     "nav.contact": "Contacto",
     "hero.hello": "Hola, soy",
-    "hero.sub": "Desarrollador full stack en <strong>Jisap</strong>. De día construyo software de empresa y de noche hago que los juegos viajen entre pantallas: C++, C#, TypeScript, WebRTC y WebAssembly.",
+    "hero.sub": "Desarrollador full stack en <strong>Grupo Jisap</strong>. De día construyo software de empresa y de noche hago que los juegos viajen entre pantallas: C++, C#, TypeScript, WebRTC y WebAssembly.",
     "hero.since": "En GitHub desde 2021",
     "hero.loc": "📍 Lorca, Murcia · España",
     "hero.cta": "Ver mis proyectos",
@@ -26,7 +26,7 @@
     "stats.screens": "pantallas: PC, TV y navegador",
     "stats.repos": "repositorios públicos",
     "about.title": "Sobre mí",
-    "about.p1": "Soy desarrollador full stack en <strong>Jisap</strong>, un grupo ganadero de Lorca donde estamos digitalizando miles de procesos e integrando la IA en cada uno de ellos. Mi día a día va del núcleo del ERP a las pantallas que usa la gente: Microsoft Dynamics AX y X++, APIs en .NET, SQL Server y aplicaciones en Angular e Ionic.",
+    "about.p1": "Soy desarrollador full stack en <strong>Grupo Jisap</strong>, un grupo ganadero, cárnico y agrícola de Lorca donde estamos digitalizando miles de procesos e integrando la IA en cada uno de ellos. Mi día a día va del núcleo del ERP a las pantallas que usa la gente: Microsoft Dynamics AX y X++, APIs en .NET, SQL Server y aplicaciones en Angular e Ionic.",
     "about.p2": "Fuera del trabajo me encanta llevar los juegos del PC a cualquier pantalla con la menor latencia posible. Esa curiosidad se ha convertido en varios proyectos open source alrededor de <strong>Sunshine</strong>, <strong>Moonlight</strong> y <strong>WebRTC</strong>: desde un servidor de streaming en C++ hasta una app para TVs Samsung y un cliente web con núcleo en WebAssembly.",
     "about.p3": "Disfruto de todo el stack, desde los pipelines del codificador y los protocolos de red hasta el último píxel de una interfaz, y bajando hasta el hardware: también me encanta trastear con placas <strong>ESP32</strong> y <strong>Arduino</strong>.",
     "projects.title": "Proyectos destacados",
@@ -56,11 +56,14 @@
     "maker.l1": "Sensorización de temperatura en general, del sensor a la lectura",
     "maker.l2": "Placas ESP32 que envían sus lecturas por Wi-Fi y Bluetooth",
     "maker.l3": "La misma idea en C++ o en MicroPython, según convenga",
-    "work.title": "Trabajo en Jisap",
+    "work.title": "Trabajo en Grupo Jisap",
     "work.role": "Desarrollador full stack",
-    "work.company.title": "Un grupo ganadero que funciona con software",
-    "work.company.p1": "<strong>Jisap</strong> es un grupo empresarial ganadero con sede en Lorca, en la Región de Murcia. Detrás de sus granjas hay miles de procesos cada día: animales, piensos, logística, compras, finanzas y las personas que lo hacen funcionar todo.",
-    "work.company.p2": "Formo parte del equipo que construye el software que mueve esos procesos, desde el ERP del núcleo hasta las aplicaciones que se usan en la oficina y en el campo.",
+    "work.company.title": "Ganadería, industria cárnica y agricultura, funcionando con software",
+    "work.company.p1": "<strong>Grupo Jisap</strong> es un grupo empresarial con sede en Lorca, en la Región de Murcia, con tres sectores: <strong>ganadero</strong>, <strong>cárnico</strong> y <strong>agrícola</strong>. De las granjas y el campo a la producción cárnica, hay miles de procesos cada día: animales, cultivos, piensos, producción, logística, compras, finanzas y las personas que lo hacen funcionar todo.",
+    "work.company.p2": "Formo parte del equipo que construye el software que mueve esos procesos en todo el grupo, desde el ERP del núcleo hasta las aplicaciones que se usan en la oficina, en las granjas y en el campo.",
+    "sector.livestock": "Ganadero",
+    "sector.meat": "Cárnico",
+    "sector.agri": "Agrícola",
     "impact.processes": "procesos digitalizados",
     "impact.processes.text": "Trabajo que antes dependía del papel y de pasos manuales ahora fluye por aplicaciones conectadas y el ERP.",
     "impact.costs": "Menos costes",
@@ -96,8 +99,8 @@
   };
 
   const ROLES = {
-    en: ["Full stack developer @ Jisap", "Digitalizing a livestock group", "AI in every process", "Game streaming over WebRTC", "C++ · C# · TypeScript", "Dynamics AX & X++", "Angular & Ionic apps", "ESP32 & temperature sensing", "WebAssembly tinkerer"],
-    es: ["Desarrollador full stack @ Jisap", "Digitalizando un grupo ganadero", "IA en cada proceso", "Streaming de juegos por WebRTC", "C++ · C# · TypeScript", "Dynamics AX y X++", "Apps en Angular e Ionic", "ESP32 y sensores de temperatura", "Trasteando con WebAssembly"],
+    en: ["Full stack developer @ Grupo Jisap", "Digitalizing Grupo Jisap", "AI in every process", "Game streaming over WebRTC", "C++ · C# · TypeScript", "Dynamics AX & X++", "Angular & Ionic apps", "ESP32 & temperature sensing", "WebAssembly tinkerer"],
+    es: ["Desarrollador full stack @ Grupo Jisap", "Digitalizando Grupo Jisap", "IA en cada proceso", "Streaming de juegos por WebRTC", "C++ · C# · TypeScript", "Dynamics AX y X++", "Apps en Angular e Ionic", "ESP32 y sensores de temperatura", "Trasteando con WebAssembly"],
   };
 
   const english = new Map();
@@ -451,7 +454,8 @@
     ["prompt", "$ cat profile.json\n"],
     ["", "{\n  "],
     ["key", "\"role\""], ["", ": "], ["str", "\"Full stack developer\""], ["", ",\n  "],
-    ["key", "\"company\""], ["", ": "], ["str", "\"Jisap\""], ["", ",\n  "],
+    ["key", "\"company\""], ["", ": "], ["str", "\"Grupo Jisap\""], ["", ",\n  "],
+    ["key", "\"sectors\""], ["", ": ["], ["str", "\"livestock\", \"meat\", \"agriculture\""], ["", "],\n  "],
     ["key", "\"location\""], ["", ": "], ["str", "\"Lorca, Murcia, Spain\""], ["", ",\n  "],
     ["key", "\"languages\""], ["", ": ["], ["str", "\"C++\", \"C#\", \"TypeScript\", \"X++\""], ["", "],\n  "],
     ["key", "\"hobbies\""], ["", ": ["], ["str", "\"4K120 HDR game streaming\", \"ESP32 temperature sensing\", \"Arduino\""], ["", "]\n}\n\n"],
