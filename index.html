@@ -4,10 +4,10 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Mario López Segura · Full stack developer</title>
-  <meta name="description" content="Mario López Segura, full stack developer at Jisap in Lorca, Spain. Game streaming over WebRTC, C++, C#, TypeScript, Angular and Dynamics AX.">
+  <meta name="description" content="Mario López Segura, full stack developer at Jisap in Lorca, Spain. Game streaming over WebRTC, C++, C#, TypeScript, Angular, Dynamics AX, ESP32 and Arduino.">
   <meta name="theme-color" content="#07090f">
   <meta property="og:title" content="Mario López Segura · Full stack developer">
-  <meta property="og:description" content="Game streaming over WebRTC, C++, C#, TypeScript, Angular and Dynamics AX.">
+  <meta property="og:description" content="Game streaming over WebRTC, C++, C#, TypeScript, Angular, Dynamics AX, ESP32 and Arduino.">
   <meta property="og:image" content="https://avatars.githubusercontent.com/u/90263997?v=4">
   <meta property="og:type" content="website">
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
@@ -26,6 +26,7 @@
     <nav class="nav-links" aria-label="Sections">
       <a href="#about" data-i18n="nav.about">About</a>
       <a href="#projects" data-i18n="nav.projects">Projects</a>
+      <a href="#maker" data-i18n="nav.maker">Maker</a>
       <a href="#work" data-i18n="nav.work">Work</a>
       <a href="#skills" data-i18n="nav.skills">Skills</a>
       <a href="#contact" data-i18n="nav.contact">Contact</a>
@@ -93,7 +94,7 @@
         <div class="about-text reveal">
           <p data-i18n="about.p1">I'm a full stack developer at <strong>Jisap</strong>, a business group based in Lorca, Spain. My day-to-day goes from the ERP core to the screens people use: Microsoft Dynamics AX and X++, .NET APIs, SQL Server, and Angular and Ionic front ends.</p>
           <p data-i18n="about.p2">Outside work I love making games travel from a PC to any screen with as little latency as possible. That curiosity turned into a set of open-source projects around <strong>Sunshine</strong>, <strong>Moonlight</strong> and <strong>WebRTC</strong>: from a C++ streaming host to a Samsung TV app and a browser client with a WebAssembly core.</p>
-          <p data-i18n="about.p3">I enjoy the whole stack, from encoder pipelines and network protocols to the last pixel of a user interface.</p>
+          <p data-i18n="about.p3">I enjoy the whole stack, from encoder pipelines and network protocols to the last pixel of a user interface, and all the way down to the hardware: I also love tinkering with <strong>ESP32</strong> and <strong>Arduino</strong> boards.</p>
         </div>
         <div class="terminal reveal" aria-hidden="true">
           <div class="terminal-bar"><i></i><i></i><i></i><span>mario@lorca: ~</span></div>
@@ -237,10 +238,102 @@
       </div>
     </section>
 
+    <!-- Maker -->
+    <section class="section" id="maker">
+      <div class="section-head reveal">
+        <span class="section-index">03</span>
+        <h2 data-i18n="maker.title">Maker corner</h2>
+      </div>
+      <div class="maker">
+        <div class="maker-copy reveal">
+          <p data-i18n="maker.p1">Away from the big screens, I love building small things that measure the world and talk to each other. <strong>ESP32</strong> and <strong>Arduino</strong> boards are my playground, and <strong>temperature sensing</strong> is my favourite use for them: reading sensors and sending the data over Wi-Fi or Bluetooth.</p>
+          <p data-i18n="maker.p2">I program them in <strong>C++</strong> when every byte and microsecond counts, and in <strong>MicroPython</strong> when I want to try an idea in minutes straight from the REPL.</p>
+          <ul class="card-points">
+            <li data-i18n="maker.l1">Temperature sensing in general, from the sensor to the reading</li>
+            <li data-i18n="maker.l2">ESP32 boards that send their readings over Wi-Fi and Bluetooth</li>
+            <li data-i18n="maker.l3">The same idea in C++ or MicroPython, whichever fits</li>
+          </ul>
+          <div class="tags"><span>ESP32</span><span>Arduino</span><span>C++</span><span>MicroPython</span><span data-i18n="maker.tag">Temperature sensors</span><span>GPIO · I²C · 1-Wire</span><span>Wi-Fi · BLE</span></div>
+        </div>
+
+        <div class="board-wrap reveal">
+          <svg class="board" viewBox="0 -30 420 430" role="img" aria-labelledby="board-title">
+            <title id="board-title">An ESP32 board reading a temperature sensor and sending the data over Wi-Fi</title>
+            <g class="waves" fill="none" stroke-linecap="round">
+              <path class="wave w1" d="M130 38 Q160 18 190 38"/>
+              <path class="wave w2" d="M115 26 Q160 -4 205 26"/>
+              <path class="wave w3" d="M100 14 Q160 -26 220 14"/>
+            </g>
+            <rect class="pcb" x="60" y="50" width="200" height="340" rx="14"/>
+            <g class="pins">
+              <circle cx="76" cy="150" r="5"/><circle cx="76" cy="172" r="5"/><circle cx="76" cy="194" r="5"/><circle cx="76" cy="216" r="5"/><circle cx="76" cy="238" r="5"/><circle cx="76" cy="260" r="5"/><circle cx="76" cy="282" r="5"/><circle cx="76" cy="304" r="5"/><circle cx="76" cy="326" r="5"/><circle cx="76" cy="348" r="5"/>
+              <circle cx="244" cy="150" r="5"/><circle cx="244" cy="172" r="5"/><circle cx="244" cy="194" r="5"/><circle cx="244" cy="216" r="5"/><circle cx="244" cy="238" r="5"/><circle cx="244" cy="260" r="5"/><circle cx="244" cy="282" r="5"/><circle cx="244" cy="304" r="5"/><circle cx="244" cy="326" r="5"/><circle cx="244" cy="348" r="5"/>
+            </g>
+            <rect class="module" x="96" y="62" width="128" height="150" rx="6"/>
+            <path class="antenna" d="M108 74 h20 v14 h16 v-14 h16 v14 h16 v-14 h16 v14 h12" fill="none"/>
+            <rect class="shield" x="104" y="104" width="112" height="98" rx="4"/>
+            <text class="chip-label" x="160" y="146">ESP32</text>
+            <text class="chip-sub" x="160" y="166">WROOM-32</text>
+            <text class="chip-sub" x="160" y="184">Wi-Fi · BT</text>
+            <path class="trace" d="M120 212 V 250 H 86"/>
+            <path class="trace" d="M200 212 V 270 H 234"/>
+            <path class="trace" d="M160 212 V 290"/>
+            <rect class="smd" x="118" y="300" width="20" height="12" rx="2"/>
+            <circle class="led-glow" cx="128" cy="306" r="16"/>
+            <circle class="led" cx="128" cy="306" r="5"/>
+            <text class="pin-label" x="128" y="334">GPIO2</text>
+            <rect class="button" x="170" y="296" width="22" height="22" rx="4"/><circle class="button-cap" cx="181" cy="307" r="6"/>
+            <text class="pin-label" x="181" y="334">BOOT</text>
+            <rect class="usb" x="138" y="372" width="44" height="26" rx="4"/>
+            <path class="wire" d="M244 216 H 290 V 236 H 316"/>
+            <text class="pin-label" x="270" y="208">GPIO4</text>
+            <g class="sensor">
+              <rect x="316" y="196" width="72" height="96" rx="8"/>
+              <g class="slots"><rect x="328" y="208" width="48" height="6" rx="3"/><rect x="328" y="220" width="48" height="6" rx="3"/><rect x="328" y="232" width="48" height="6" rx="3"/><rect x="328" y="244" width="48" height="6" rx="3"/></g>
+              <text class="sensor-label" x="352" y="272">DHT22</text>
+            </g>
+            <g class="heat"><circle cx="352" cy="190" r="4"/><circle cx="364" cy="190" r="3"/><circle cx="340" cy="190" r="3"/></g>
+            <text class="temp" id="board-temp" x="352" y="320">23.4 °C</text>
+          </svg>
+          <div class="serial" aria-hidden="true"><span class="serial-title">Serial · 115200 · DHT22</span><span class="serial-lines" id="serial-lines"></span></div>
+        </div>
+      </div>
+
+      <div class="code-tabs reveal">
+        <div class="tab-list" role="tablist" aria-label="Temperature sensor example">
+          <button type="button" role="tab" id="tab-cpp" aria-controls="code-cpp" aria-selected="true">C++ · Arduino</button>
+          <button type="button" role="tab" id="tab-py" aria-controls="code-py" aria-selected="false" tabindex="-1">MicroPython</button>
+        </div>
+        <pre class="code" id="code-cpp" role="tabpanel" aria-labelledby="tab-cpp"><code><span class="kw">#include</span> <span class="str">&lt;DHT.h&gt;</span>
+
+DHT <span class="fn">sensor</span>(<span class="num">4</span>, DHT22);   <span class="cm">// data pin on GPIO4</span>
+
+<span class="kw">void</span> <span class="fn">setup</span>() {
+  Serial.<span class="fn">begin</span>(<span class="num">115200</span>);
+  sensor.<span class="fn">begin</span>();
+}
+
+<span class="kw">void</span> <span class="fn">loop</span>() {
+  <span class="kw">float</span> celsius = sensor.<span class="fn">readTemperature</span>();
+  Serial.<span class="fn">printf</span>(<span class="str">"%.1f °C\n"</span>, celsius);
+  <span class="fn">delay</span>(<span class="num">2000</span>);
+}</code></pre>
+        <pre class="code" id="code-py" role="tabpanel" aria-labelledby="tab-py" hidden><code><span class="kw">from</span> machine <span class="kw">import</span> Pin
+<span class="kw">import</span> dht, time
+
+sensor = dht.<span class="fn">DHT22</span>(<span class="fn">Pin</span>(<span class="num">4</span>))   <span class="cm"># data pin on GPIO4</span>
+
+<span class="kw">while</span> <span class="kw">True</span>:
+    sensor.<span class="fn">measure</span>()
+    <span class="fn">print</span>(<span class="str">"%.1f °C"</span> % sensor.<span class="fn">temperature</span>())
+    time.<span class="fn">sleep</span>(<span class="num">2</span>)</code></pre>
+      </div>
+    </section>
+
     <!-- Work -->
     <section class="section" id="work">
       <div class="section-head reveal">
-        <span class="section-index">03</span>
+        <span class="section-index">04</span>
         <h2 data-i18n="work.title">Work at Jisap</h2>
       </div>
       <div class="work">
@@ -285,19 +378,19 @@
     <!-- Skills -->
     <section class="section" id="skills">
       <div class="section-head reveal">
-        <span class="section-index">04</span>
+        <span class="section-index">05</span>
         <h2 data-i18n="skills.title">Toolbox</h2>
       </div>
       <div class="marquee" aria-hidden="true">
         <div class="marquee-track">
-          <span>C++</span><span>C#</span><span>TypeScript</span><span>JavaScript</span><span>C</span><span>X++</span><span>SQL</span><span>Angular</span><span>Ionic</span><span>.NET</span><span>WebRTC</span><span>WebAssembly</span><span>Docker</span><span>Git</span>
-          <span>C++</span><span>C#</span><span>TypeScript</span><span>JavaScript</span><span>C</span><span>X++</span><span>SQL</span><span>Angular</span><span>Ionic</span><span>.NET</span><span>WebRTC</span><span>WebAssembly</span><span>Docker</span><span>Git</span>
+          <span>C++</span><span>C#</span><span>TypeScript</span><span>JavaScript</span><span>C</span><span>X++</span><span>SQL</span><span>Angular</span><span>Ionic</span><span>.NET</span><span>WebRTC</span><span>WebAssembly</span><span>Docker</span><span>Git</span><span>ESP32</span><span>Arduino</span><span>MicroPython</span>
+          <span>C++</span><span>C#</span><span>TypeScript</span><span>JavaScript</span><span>C</span><span>X++</span><span>SQL</span><span>Angular</span><span>Ionic</span><span>.NET</span><span>WebRTC</span><span>WebAssembly</span><span>Docker</span><span>Git</span><span>ESP32</span><span>Arduino</span><span>MicroPython</span>
         </div>
       </div>
       <div class="skill-groups">
         <div class="skill-group reveal">
-          <h4 data-i18n="skills.systems">Systems &amp; streaming</h4>
-          <div class="tags"><span>C++</span><span>C</span><span>CMake</span><span>vcpkg</span><span>WebRTC</span><span>H.264 / HEVC / AV1</span></div>
+          <h4 data-i18n="skills.systems">Systems, streaming &amp; embedded</h4>
+          <div class="tags"><span>C++</span><span>C</span><span>CMake</span><span>vcpkg</span><span>WebRTC</span><span>H.264 / HEVC / AV1</span><span>ESP32</span><span>Arduino</span><span>MicroPython</span></div>
         </div>
         <div class="skill-group reveal">
           <h4 data-i18n="skills.web">Front end</h4>
@@ -317,7 +410,7 @@
     <!-- GitHub -->
     <section class="section" id="github">
       <div class="section-head reveal">
-        <span class="section-index">05</span>
+        <span class="section-index">06</span>
         <h2 data-i18n="gh.title">Latest on GitHub</h2>
       </div>
       <div class="repos" id="repos">

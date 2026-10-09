@@ -533,6 +533,84 @@ strong { color: #fff; font-weight: 600; }
   background: rgba(255, 255, 255, 0.02);
 }
 
+/* ---------- Maker ---------- */
+
+.maker { display: grid; grid-template-columns: 1.1fr 1fr; gap: 40px; align-items: center; }
+.maker-copy p { margin: 0 0 16px; color: #c5ccda; font-size: 1.08rem; }
+.maker-copy .card-points { margin-top: 6px; }
+
+.board-wrap { position: relative; display: grid; gap: 14px; justify-items: center; }
+.board { width: 100%; max-width: 420px; height: auto; overflow: visible; }
+.board .pcb { fill: #10243a; stroke: #1f4466; stroke-width: 2; }
+.board .module { fill: #0b1a2b; stroke: #2a5378; }
+.board .shield { fill: #c9d2de; stroke: #8f9bab; }
+.board .antenna { stroke: #d9b45a; stroke-width: 3; stroke-linejoin: round; }
+.board .chip-label { fill: #1b2433; font: 700 22px var(--mono); text-anchor: middle; }
+.board .chip-sub { fill: #3b4658; font: 600 11px var(--mono); text-anchor: middle; }
+.board .pins circle { fill: #d9b45a; stroke: #7a6326; stroke-width: 1.5; }
+.board .pin-label { fill: var(--muted); font: 600 10px var(--mono); text-anchor: middle; }
+.board .trace { fill: none; stroke: #3ee0cf; stroke-width: 2; stroke-dasharray: 4 6; opacity: 0.6; animation: dash 0.8s linear infinite; }
+.board .wire { fill: none; stroke: #ff6fae; stroke-width: 3; stroke-linecap: round; stroke-linejoin: round; stroke-dasharray: 5 7; animation: dash 0.9s linear infinite reverse; }
+.board .smd { fill: #2a3242; }
+.board .led { fill: #3ee0cf; animation: led 2s steps(1) infinite; }
+.board .led-glow { fill: #3ee0cf; opacity: 0; filter: blur(6px); animation: led-glow 2s steps(1) infinite; }
+.board .button { fill: #2a3242; stroke: #46506a; }
+.board .button-cap { fill: #11151d; }
+.board .usb { fill: #9aa4b4; stroke: #6b7587; }
+.board .sensor rect:first-child { fill: #eef1f6; stroke: #b9c2cf; }
+.board .slots rect { fill: #c3cad6; }
+.board .sensor-label { fill: #1b2433; font: 700 12px var(--mono); text-anchor: middle; }
+.board .heat circle { fill: #ff6fae; opacity: 0; animation: heat 2.4s ease-out infinite; }
+.board .heat circle:nth-child(2) { animation-delay: 0.8s; }
+.board .heat circle:nth-child(3) { animation-delay: 1.6s; }
+.board .temp { fill: var(--text); font: 700 20px var(--mono); text-anchor: middle; }
+.board .wave { stroke: var(--cyan); stroke-width: 4; opacity: 0; animation: wave 1.8s ease-out infinite; }
+.board .w2 { animation-delay: 0.3s; }
+.board .w3 { animation-delay: 0.6s; }
+
+@keyframes led { 0% { fill: #3ee0cf; } 10% { fill: #1c2a2f; } }
+@keyframes led-glow { 0% { opacity: 0.8; } 10% { opacity: 0; } }
+@keyframes wave { 0% { opacity: 0; } 30% { opacity: 0.9; } 100% { opacity: 0; } }
+@keyframes heat { 0% { opacity: 0; transform: translateY(0); } 30% { opacity: 0.8; } 100% { opacity: 0; transform: translateY(-26px); } }
+
+.serial {
+  width: 100%;
+  max-width: 420px;
+  padding: 12px 14px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: #0a0e17;
+  font: 0.8rem/1.6 var(--mono);
+  color: #a6e3a1;
+}
+.serial-title { display: block; margin-bottom: 4px; color: var(--muted); }
+.serial-lines { display: grid; align-content: start; min-height: 6.4em; white-space: pre; }
+
+.code-tabs {
+  margin-top: 30px;
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  background: #0a0e17;
+  overflow: hidden;
+}
+.tab-list { display: flex; gap: 4px; padding: 8px; background: #111726; border-bottom: 1px solid var(--border); }
+.tab-list [role="tab"] {
+  border: 0;
+  border-radius: 8px;
+  padding: 8px 14px;
+  background: transparent;
+  color: var(--muted);
+  font: 600 0.85rem var(--mono);
+  cursor: pointer;
+}
+.tab-list [role="tab"][aria-selected="true"] { background: var(--surface-strong); color: var(--text); box-shadow: inset 0 -2px 0 var(--cyan); }
+.code { margin: 0; padding: 20px; overflow-x: auto; font: 0.88rem/1.7 var(--mono); color: #c9d4ea; }
+.code .kw { color: var(--violet); }
+.code .fn { color: var(--cyan); }
+.code .num { color: #fab387; }
+.code .str { color: #a6e3a1; }
+.code .cm { color: #6c7590; font-style: italic; }
+
 /* ---------- Work ---------- */
 
 .work { display: grid; grid-template-columns: 1fr 1.3fr; gap: 20px 40px; }
@@ -663,7 +741,7 @@ strong { color: #fff; font-weight: 600; }
 /* ---------- Responsive ---------- */
 
 @media (max-width: 900px) {
-  .about-grid, .work { grid-template-columns: 1fr; }
+  .about-grid, .work, .maker { grid-template-columns: 1fr; }
   .cards, .skill-groups { grid-template-columns: 1fr; }
   .repos { grid-template-columns: repeat(2, 1fr); }
   .stats { grid-template-columns: repeat(2, 1fr); }

@@ -12,6 +12,7 @@
   const ES = {
     "nav.about": "Sobre mí",
     "nav.projects": "Proyectos",
+    "nav.maker": "Maker",
     "nav.work": "Trabajo",
     "nav.skills": "Habilidades",
     "nav.contact": "Contacto",
@@ -27,7 +28,7 @@
     "about.title": "Sobre mí",
     "about.p1": "Soy desarrollador full stack en <strong>Jisap</strong>, un grupo empresarial de Lorca. Mi día a día va del núcleo del ERP a las pantallas que usa la gente: Microsoft Dynamics AX y X++, APIs en .NET, SQL Server y aplicaciones en Angular e Ionic.",
     "about.p2": "Fuera del trabajo me encanta llevar los juegos del PC a cualquier pantalla con la menor latencia posible. Esa curiosidad se ha convertido en varios proyectos open source alrededor de <strong>Sunshine</strong>, <strong>Moonlight</strong> y <strong>WebRTC</strong>: desde un servidor de streaming en C++ hasta una app para TVs Samsung y un cliente web con núcleo en WebAssembly.",
-    "about.p3": "Disfruto de todo el stack, desde los pipelines del codificador y los protocolos de red hasta el último píxel de una interfaz.",
+    "about.p3": "Disfruto de todo el stack, desde los pipelines del codificador y los protocolos de red hasta el último píxel de una interfaz, y bajando hasta el hardware: también me encanta trastear con placas <strong>ESP32</strong> y <strong>Arduino</strong>.",
     "projects.title": "Proyectos destacados",
     "pipeline.title": "Moonlight WebRTC: un juego, cualquier pantalla",
     "pipeline.text": "Sunshine captura y codifica el juego y lo envía por WebRTC directamente a una TV Samsung o a un navegador. Sin saltos extra en el PC, los fotogramas llegan antes y más regulares.",
@@ -48,6 +49,13 @@
     "p.osms.1": "Panel web y API REST con documentación OpenAPI",
     "p.osms.2": "Reinicia Sunshine automáticamente si se cae",
     "p.osms.3": "Pantalla virtual, icono en la bandeja e instalador",
+    "maker.title": "Rincón maker",
+    "maker.p1": "Lejos de las pantallas grandes, me encanta construir cosas pequeñas que miden el mundo y hablan entre sí. Las placas <strong>ESP32</strong> y <strong>Arduino</strong> son mi patio de juegos, y la <strong>sensorización de temperatura</strong> es lo que más me gusta hacer con ellas: leer sensores y enviar los datos por Wi-Fi o Bluetooth.",
+    "maker.p2": "Las programo en <strong>C++</strong> cuando cuenta cada byte y cada microsegundo, y en <strong>MicroPython</strong> cuando quiero probar una idea en minutos directamente desde el REPL.",
+    "maker.tag": "Sensores de temperatura",
+    "maker.l1": "Sensorización de temperatura en general, del sensor a la lectura",
+    "maker.l2": "Placas ESP32 que envían sus lecturas por Wi-Fi y Bluetooth",
+    "maker.l3": "La misma idea en C++ o en MicroPython, según convenga",
     "work.title": "Trabajo en Jisap",
     "work.role": "Desarrollador full stack",
     "work.text": "Software de empresa para un grupo multiempresa: el ERP que mueve la operación y las aplicaciones web y móviles que la gente usa cada día.",
@@ -57,7 +65,7 @@
     "work.l4": "Datos",
     "work.note": "Foco reciente: llevar pantallas del ERP en X++ a aplicaciones web modernas en Angular con APIs en .NET.",
     "skills.title": "Caja de herramientas",
-    "skills.systems": "Sistemas y streaming",
+    "skills.systems": "Sistemas, streaming y electrónica",
     "skills.web": "Front end",
     "skills.back": "Back end",
     "skills.erp": "ERP y herramientas",
@@ -72,8 +80,8 @@
   };
 
   const ROLES = {
-    en: ["Full stack developer @ Jisap", "Game streaming over WebRTC", "C++ · C# · TypeScript", "Dynamics AX & X++", "Angular & Ionic apps", "WebAssembly tinkerer"],
-    es: ["Desarrollador full stack @ Jisap", "Streaming de juegos por WebRTC", "C++ · C# · TypeScript", "Dynamics AX y X++", "Apps en Angular e Ionic", "Trasteando con WebAssembly"],
+    en: ["Full stack developer @ Jisap", "Game streaming over WebRTC", "C++ · C# · TypeScript", "Dynamics AX & X++", "Angular & Ionic apps", "ESP32 & temperature sensing", "WebAssembly tinkerer"],
+    es: ["Desarrollador full stack @ Jisap", "Streaming de juegos por WebRTC", "C++ · C# · TypeScript", "Dynamics AX y X++", "Apps en Angular e Ionic", "ESP32 y sensores de temperatura", "Trasteando con WebAssembly"],
   };
 
   const english = new Map();
@@ -430,7 +438,7 @@
     ["key", "\"company\""], ["", ": "], ["str", "\"Jisap\""], ["", ",\n  "],
     ["key", "\"location\""], ["", ": "], ["str", "\"Lorca, Murcia, Spain\""], ["", ",\n  "],
     ["key", "\"languages\""], ["", ": ["], ["str", "\"C++\", \"C#\", \"TypeScript\", \"X++\""], ["", "],\n  "],
-    ["key", "\"hobby\""], ["", ": "], ["str", "\"4K120 HDR game streaming\""], ["", "\n}\n\n"],
+    ["key", "\"hobbies\""], ["", ": ["], ["str", "\"4K120 HDR game streaming\", \"ESP32 temperature sensing\", \"Arduino\""], ["", "]\n}\n\n"],
     ["prompt", "$ "],
   ];
 
@@ -480,6 +488,61 @@
     }
   }, { threshold: 0.4 });
   terminalObserver.observe(terminal);
+
+  // ---------------------------------------------------------------------------------------
+  // Maker: C++ / MicroPython tabs, and a serial monitor that follows the board's LED.
+
+  const tabs = $$('[role="tab"]');
+  function selectTab(selected) {
+    for (const tab of tabs) {
+      const active = tab === selected;
+      tab.setAttribute("aria-selected", String(active));
+      tab.tabIndex = active ? 0 : -1;
+      $("#" + tab.getAttribute("aria-controls")).hidden = !active;
+    }
+  }
+  tabs.forEach((tab, index) => {
+    tab.addEventListener("click", () => selectTab(tab));
+    tab.addEventListener("keydown", (event) => {
+      if (event.key === "ArrowRight" || event.key === "ArrowLeft") {
+        const next = tabs[(index + (event.key === "ArrowRight" ? 1 : tabs.length - 1)) % tabs.length];
+        selectTab(next);
+        next.focus();
+      }
+    });
+  });
+
+  // The serial monitor prints a reading every 2 s, like the sketch, and the board shows it.
+  const serialLines = $("#serial-lines");
+  const boardTemp = $("#board-temp");
+  if (serialLines) {
+    let serialTimer = 0;
+    let millis = 0;
+    let celsius = 23.4;
+    const print = () => {
+      millis += 2000;
+      celsius = Math.min(26.5, Math.max(21.5, celsius + (Math.random() - 0.5) * 0.6));
+      const reading = `${celsius.toFixed(1)} °C`;
+      boardTemp.textContent = reading;
+      const line = document.createElement("span");
+      line.textContent = `${String(millis).padStart(6, " ")} ms  ${reading}`;
+      serialLines.append(line);
+      while (serialLines.children.length > 4) {
+        serialLines.firstElementChild.remove();
+      }
+    };
+    if (reduceMotion) {
+      print();
+    } else {
+      new IntersectionObserver(([entry]) => {
+        clearInterval(serialTimer);
+        if (entry.isIntersecting) {
+          print();
+          serialTimer = setInterval(print, 2000);
+        }
+      }).observe(serialLines);
+    }
+  }
 
   // Stops the SVG packets for people who prefer less motion.
   if (reduceMotion) {
