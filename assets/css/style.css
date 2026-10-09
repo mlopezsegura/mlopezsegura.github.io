@@ -613,6 +613,101 @@ strong { color: #fff; font-weight: 600; }
 
 /* ---------- Work ---------- */
 
+.company {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 30px;
+  align-items: center;
+  padding: 32px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--surface);
+}
+.company h3 { margin: 14px 0 10px; font-size: 1.6rem; }
+.company p { margin: 0 0 12px; color: #c5ccda; }
+.farm { width: 100%; height: auto; overflow: visible; }
+.farm .hill { fill: rgba(62, 224, 207, 0.08); }
+.farm .barn path:first-child { fill: rgba(139, 123, 255, 0.18); stroke: rgba(139, 123, 255, 0.7); stroke-width: 2; }
+.farm .barn-door { fill: rgba(7, 9, 15, 0.7); stroke: rgba(139, 123, 255, 0.7); }
+.farm .barn-roof { stroke: var(--pink); stroke-width: 4; stroke-linecap: round; stroke-linejoin: round; }
+.farm .silo rect, .farm .silo path { fill: rgba(62, 224, 207, 0.14); stroke: rgba(62, 224, 207, 0.7); stroke-width: 2; }
+.farm .farm-link { fill: none; stroke: url(#g-farm); stroke-width: 2; stroke-dasharray: 5 7; opacity: 0.6; animation: dash 1s linear infinite; }
+.farm .farm-packet { fill: var(--cyan); filter: drop-shadow(0 0 4px var(--cyan)); }
+.farm .dash-screen { fill: #0a0e17; stroke: rgba(255, 255, 255, 0.18); }
+.farm .bar { fill: url(#g-farm); transform-box: fill-box; transform-origin: bottom; animation: bar 2.4s var(--ease) infinite alternate; }
+.farm .b2 { animation-delay: 0.2s; }
+.farm .b3 { animation-delay: 0.4s; }
+.farm .b4 { animation-delay: 0.6s; }
+@keyframes bar { from { transform: scaleY(0.35); } to { transform: scaleY(1); } }
+
+.impact { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; margin: 22px 0; }
+.impact-card {
+  padding: 26px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--surface);
+  transition: transform 0.35s var(--ease), border-color 0.3s, opacity 0.9s var(--ease);
+}
+.impact-card:hover { transform: translateY(-6px); border-color: rgba(62, 224, 207, 0.5); }
+.impact-card h4 { margin: 8px 0 6px; font-size: 1.15rem; }
+.impact-card p { margin: 0; color: var(--muted); font-size: 0.95rem; }
+.impact-value {
+  display: block;
+  font-size: 2.6rem;
+  font-weight: 700;
+  line-height: 1.1;
+  background: var(--grad);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+.impact-icon { width: 48px; height: 48px; overflow: visible; }
+.impact-icon .coin { fill: rgba(62, 224, 207, 0.15); stroke: var(--cyan); stroke-width: 2.5; }
+.impact-icon text { fill: var(--cyan); font: 700 16px var(--font); }
+.impact-icon .down { fill: none; stroke: var(--pink); stroke-width: 3; stroke-linecap: round; stroke-linejoin: round; animation: down 1.6s ease-in-out infinite; }
+@keyframes down { 0%, 100% { transform: translateY(-3px); } 50% { transform: translateY(4px); } }
+.impact-icon .clock { fill: rgba(139, 123, 255, 0.15); stroke: var(--violet); stroke-width: 2.5; }
+.impact-icon .hand { stroke: var(--text); stroke-width: 3; stroke-linecap: round; transform-origin: 24px 24px; }
+.impact-icon .hand-long { animation: spin 2s linear infinite; }
+.impact-icon .hand-short { animation: spin 24s linear infinite; }
+
+.ai {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 30px;
+  align-items: center;
+  padding: 32px;
+  border-radius: var(--radius);
+  border: 1px solid transparent;
+  background:
+    linear-gradient(var(--bg-2), var(--bg-2)) padding-box,
+    linear-gradient(120deg, rgba(255, 111, 174, 0.6), rgba(139, 123, 255, 0.4), rgba(62, 224, 207, 0.6)) border-box;
+}
+.ai h3 { margin: 12px 0 10px; font-size: 1.6rem; }
+.ai p { margin: 0; color: #c5ccda; }
+.ai-badge {
+  display: inline-block;
+  padding: 4px 12px;
+  border-radius: 999px;
+  background: linear-gradient(120deg, var(--pink), var(--violet));
+  color: #fff;
+  font: 700 0.8rem var(--mono);
+  letter-spacing: 0.1em;
+}
+.ai-flow { width: 100%; height: auto; overflow: visible; }
+.ai-flow .ai-node rect { fill: rgba(255, 255, 255, 0.04); stroke: rgba(255, 255, 255, 0.18); }
+.ai-flow .ai-node.done rect { fill: rgba(62, 224, 207, 0.12); stroke: rgba(62, 224, 207, 0.7); }
+.ai-flow text { fill: var(--text); font: 600 13px var(--mono); text-anchor: middle; }
+.ai-flow .ai-link { fill: none; stroke: rgba(255, 255, 255, 0.2); stroke-width: 2; stroke-dasharray: 4 6; animation: dash 0.8s linear infinite; }
+.ai-flow .ai-packet { fill: var(--violet); }
+.ai-flow .ai-packet.fast { fill: var(--cyan); }
+.ai-flow .ai-orb { fill: url(#g-ai); animation: orb 2.4s ease-in-out infinite; transform-box: fill-box; transform-origin: center; }
+.ai-flow .ai-ring { fill: none; stroke: url(#g-ai); stroke-width: 2; stroke-dasharray: 10 14; transform-box: fill-box; transform-origin: center; animation: spin 6s linear infinite; }
+.ai-flow .ai-core text { fill: #fff; font: 700 22px var(--font); }
+@keyframes orb { 0%, 100% { transform: scale(0.94); filter: drop-shadow(0 0 6px rgba(139, 123, 255, 0.6)); } 50% { transform: scale(1.04); filter: drop-shadow(0 0 18px rgba(255, 111, 174, 0.8)); } }
+
+.subhead { margin: 50px 0 20px; font-size: 1.4rem; color: var(--muted); font-weight: 600; }
+
 .work { display: grid; grid-template-columns: 1fr 1.3fr; gap: 20px 40px; }
 .work-intro p { color: #c5ccda; font-size: 1.1rem; }
 .role-badge {
@@ -741,7 +836,8 @@ strong { color: #fff; font-weight: 600; }
 /* ---------- Responsive ---------- */
 
 @media (max-width: 900px) {
-  .about-grid, .work, .maker { grid-template-columns: 1fr; }
+  .about-grid, .work, .maker, .company, .ai { grid-template-columns: 1fr; }
+  .impact { grid-template-columns: 1fr; }
   .cards, .skill-groups { grid-template-columns: 1fr; }
   .repos { grid-template-columns: repeat(2, 1fr); }
   .stats { grid-template-columns: repeat(2, 1fr); }

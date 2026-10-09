@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Mario López Segura · Full stack developer</title>
-  <meta name="description" content="Mario López Segura, full stack developer at Jisap in Lorca, Spain. Game streaming over WebRTC, C++, C#, TypeScript, Angular, Dynamics AX, ESP32 and Arduino.">
+  <meta name="description" content="Mario López Segura, full stack developer at Jisap, a livestock group in Lorca, Spain. Game streaming over WebRTC, C++, C#, TypeScript, Angular, Dynamics AX, ESP32 and Arduino.">
   <meta name="theme-color" content="#07090f">
   <meta property="og:title" content="Mario López Segura · Full stack developer">
   <meta property="og:description" content="Game streaming over WebRTC, C++, C#, TypeScript, Angular, Dynamics AX, ESP32 and Arduino.">
@@ -92,7 +92,7 @@
       </div>
       <div class="about-grid">
         <div class="about-text reveal">
-          <p data-i18n="about.p1">I'm a full stack developer at <strong>Jisap</strong>, a business group based in Lorca, Spain. My day-to-day goes from the ERP core to the screens people use: Microsoft Dynamics AX and X++, .NET APIs, SQL Server, and Angular and Ionic front ends.</p>
+          <p data-i18n="about.p1">I'm a full stack developer at <strong>Jisap</strong>, a livestock business group based in Lorca, Spain, where we are digitalizing thousands of processes and bringing AI into each of them. My day-to-day goes from the ERP core to the screens people use: Microsoft Dynamics AX and X++, .NET APIs, SQL Server, and Angular and Ionic front ends.</p>
           <p data-i18n="about.p2">Outside work I love making games travel from a PC to any screen with as little latency as possible. That curiosity turned into a set of open-source projects around <strong>Sunshine</strong>, <strong>Moonlight</strong> and <strong>WebRTC</strong>: from a C++ streaming host to a Samsung TV app and a browser client with a WebAssembly core.</p>
           <p data-i18n="about.p3">I enjoy the whole stack, from encoder pipelines and network protocols to the last pixel of a user interface, and all the way down to the hardware: I also love tinkering with <strong>ESP32</strong> and <strong>Arduino</strong> boards.</p>
         </div>
@@ -336,10 +336,97 @@ sensor = dht.<span class="fn">DHT22</span>(<span class="fn">Pin</span>(<span cla
         <span class="section-index">04</span>
         <h2 data-i18n="work.title">Work at Jisap</h2>
       </div>
+      <div class="company reveal">
+        <div class="company-copy">
+          <span class="role-badge" data-i18n="work.role">Full stack developer</span>
+          <h3 data-i18n="work.company.title">A livestock group, run on software</h3>
+          <p data-i18n="work.company.p1"><strong>Jisap</strong> is a livestock business group based in Lorca, in the Region of Murcia, Spain. Behind its farms there are thousands of processes every day: animals, feed, logistics, purchasing, finance and the people who make it all work.</p>
+          <p data-i18n="work.company.p2">I'm part of the team that builds the software running those processes, from the ERP at the core to the apps used in the office and out in the field.</p>
+        </div>
+        <svg class="farm" viewBox="0 0 360 240" role="img" aria-labelledby="farm-title">
+          <title id="farm-title">A farm sending its data to the group's software</title>
+          <defs>
+            <linearGradient id="g-farm" x1="0" x2="1">
+              <stop offset="0" stop-color="#3ee0cf"/>
+              <stop offset="1" stop-color="#8b7bff"/>
+            </linearGradient>
+          </defs>
+          <path class="hill" d="M0 210 Q90 170 180 200 T360 190 V240 H0 Z"/>
+          <g class="barn">
+            <path d="M40 200 V140 L90 105 L140 140 V200 Z"/>
+            <rect class="barn-door" x="76" y="160" width="28" height="40" rx="2"/>
+            <path class="barn-roof" d="M32 144 L90 100 L148 144" fill="none"/>
+          </g>
+          <g class="silo">
+            <rect x="152" y="120" width="30" height="80" rx="4"/>
+            <path d="M152 124 Q167 100 182 124" />
+          </g>
+          <path id="farm-link" class="farm-link" d="M150 110 C 200 60, 240 60, 270 70"/>
+          <circle class="farm-packet" r="4"><animateMotion dur="1.8s" repeatCount="indefinite"><mpath href="#farm-link"/></animateMotion></circle>
+          <circle class="farm-packet" r="4"><animateMotion dur="1.8s" begin="0.6s" repeatCount="indefinite"><mpath href="#farm-link"/></animateMotion></circle>
+          <circle class="farm-packet" r="4"><animateMotion dur="1.8s" begin="1.2s" repeatCount="indefinite"><mpath href="#farm-link"/></animateMotion></circle>
+          <rect class="dash-screen" x="250" y="40" width="96" height="76" rx="10"/>
+          <rect class="bar b1" x="264" y="80" width="12" height="24" rx="2"/>
+          <rect class="bar b2" x="282" y="70" width="12" height="34" rx="2"/>
+          <rect class="bar b3" x="300" y="60" width="12" height="44" rx="2"/>
+          <rect class="bar b4" x="318" y="52" width="12" height="52" rx="2"/>
+        </svg>
+      </div>
+
+      <div class="impact">
+        <div class="impact-card reveal">
+          <span class="impact-value"><span class="count" data-to="1000">0</span>+</span>
+          <h4 data-i18n="impact.processes">processes digitalized</h4>
+          <p data-i18n="impact.processes.text">Work that used to depend on paperwork and manual steps now runs through connected apps and the ERP.</p>
+        </div>
+        <div class="impact-card reveal">
+          <svg class="impact-icon" viewBox="0 0 48 48" aria-hidden="true"><circle class="coin" cx="22" cy="24" r="14"/><text x="22" y="30" text-anchor="middle">€</text><path class="down" d="M40 12 V32 M34 26 L40 32 L46 26"/></svg>
+          <h4 data-i18n="impact.costs">Lower costs</h4>
+          <p data-i18n="impact.costs.text">Less manual work and fewer errors add up to real savings across the whole group.</p>
+        </div>
+        <div class="impact-card reveal">
+          <svg class="impact-icon" viewBox="0 0 48 48" aria-hidden="true"><circle class="clock" cx="24" cy="24" r="18"/><path class="hand hand-long" d="M24 24 V11"/><path class="hand hand-short" d="M24 24 H33"/></svg>
+          <h4 data-i18n="impact.time">Time back</h4>
+          <p data-i18n="impact.time.text">Faster processes free people for the work that really needs them.</p>
+        </div>
+      </div>
+
+      <div class="ai reveal">
+        <div class="ai-copy">
+          <span class="ai-badge" data-i18n="ai.badge">AI</span>
+          <h3 data-i18n="ai.title">AI in every process</h3>
+          <p data-i18n="ai.text">The next step is already under way: we are bringing artificial intelligence into each process to make it more efficient. It takes over repetitive work, helps people find the right information, and prepares the data so decisions come faster and better informed.</p>
+        </div>
+        <svg class="ai-flow" viewBox="0 0 520 160" role="img" aria-labelledby="ai-title">
+          <title id="ai-title">Each process feeds data to AI, which speeds up the decision</title>
+          <defs>
+            <radialGradient id="g-ai">
+              <stop offset="0" stop-color="#ff6fae"/>
+              <stop offset="0.6" stop-color="#8b7bff"/>
+              <stop offset="1" stop-color="#3ee0cf"/>
+            </radialGradient>
+          </defs>
+          <path id="ai-l1" class="ai-link" d="M100 80 H 180"/>
+          <path id="ai-l2" class="ai-link" d="M240 80 H 300"/>
+          <path id="ai-l3" class="ai-link" d="M380 80 H 430"/>
+          <g class="ai-node"><rect x="10" y="50" width="90" height="60" rx="14"/><text x="55" y="86" data-i18n="ai.n1">Process</text></g>
+          <g class="ai-node"><rect x="180" y="50" width="60" height="60" rx="14"/><text x="210" y="86" data-i18n="ai.n2">Data</text></g>
+          <g class="ai-core">
+            <circle class="ai-ring" cx="340" cy="80" r="44"/>
+            <circle class="ai-orb" cx="340" cy="80" r="32"/>
+            <text x="340" y="88" data-i18n="ai.badge">AI</text>
+          </g>
+          <g class="ai-node done"><rect x="430" y="50" width="84" height="60" rx="14"/><text x="472" y="86" data-i18n="ai.n3">Decision</text></g>
+          <circle class="ai-packet" r="4"><animateMotion dur="1.2s" repeatCount="indefinite"><mpath href="#ai-l1"/></animateMotion></circle>
+          <circle class="ai-packet" r="4"><animateMotion dur="1.2s" begin="0.4s" repeatCount="indefinite"><mpath href="#ai-l2"/></animateMotion></circle>
+          <circle class="ai-packet fast" r="4"><animateMotion dur="0.6s" begin="0.2s" repeatCount="indefinite"><mpath href="#ai-l3"/></animateMotion></circle>
+        </svg>
+      </div>
+
+      <h3 class="subhead reveal" data-i18n="work.stack">How we build it</h3>
       <div class="work">
         <div class="work-intro reveal">
-          <span class="role-badge" data-i18n="work.role">Full stack developer</span>
-          <p data-i18n="work.text">Business software for a multi-company group: the ERP behind the operation and the web and mobile apps people use every day.</p>
+          <p data-i18n="work.text">Software for a multi-company group: the ERP behind the operation and the web and mobile apps people use every day.</p>
         </div>
         <ol class="layers">
           <li class="layer reveal">

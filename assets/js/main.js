@@ -26,7 +26,7 @@
     "stats.screens": "pantallas: PC, TV y navegador",
     "stats.repos": "repositorios públicos",
     "about.title": "Sobre mí",
-    "about.p1": "Soy desarrollador full stack en <strong>Jisap</strong>, un grupo empresarial de Lorca. Mi día a día va del núcleo del ERP a las pantallas que usa la gente: Microsoft Dynamics AX y X++, APIs en .NET, SQL Server y aplicaciones en Angular e Ionic.",
+    "about.p1": "Soy desarrollador full stack en <strong>Jisap</strong>, un grupo ganadero de Lorca donde estamos digitalizando miles de procesos e integrando la IA en cada uno de ellos. Mi día a día va del núcleo del ERP a las pantallas que usa la gente: Microsoft Dynamics AX y X++, APIs en .NET, SQL Server y aplicaciones en Angular e Ionic.",
     "about.p2": "Fuera del trabajo me encanta llevar los juegos del PC a cualquier pantalla con la menor latencia posible. Esa curiosidad se ha convertido en varios proyectos open source alrededor de <strong>Sunshine</strong>, <strong>Moonlight</strong> y <strong>WebRTC</strong>: desde un servidor de streaming en C++ hasta una app para TVs Samsung y un cliente web con núcleo en WebAssembly.",
     "about.p3": "Disfruto de todo el stack, desde los pipelines del codificador y los protocolos de red hasta el último píxel de una interfaz, y bajando hasta el hardware: también me encanta trastear con placas <strong>ESP32</strong> y <strong>Arduino</strong>.",
     "projects.title": "Proyectos destacados",
@@ -58,7 +58,23 @@
     "maker.l3": "La misma idea en C++ o en MicroPython, según convenga",
     "work.title": "Trabajo en Jisap",
     "work.role": "Desarrollador full stack",
-    "work.text": "Software de empresa para un grupo multiempresa: el ERP que mueve la operación y las aplicaciones web y móviles que la gente usa cada día.",
+    "work.company.title": "Un grupo ganadero que funciona con software",
+    "work.company.p1": "<strong>Jisap</strong> es un grupo empresarial ganadero con sede en Lorca, en la Región de Murcia. Detrás de sus granjas hay miles de procesos cada día: animales, piensos, logística, compras, finanzas y las personas que lo hacen funcionar todo.",
+    "work.company.p2": "Formo parte del equipo que construye el software que mueve esos procesos, desde el ERP del núcleo hasta las aplicaciones que se usan en la oficina y en el campo.",
+    "impact.processes": "procesos digitalizados",
+    "impact.processes.text": "Trabajo que antes dependía del papel y de pasos manuales ahora fluye por aplicaciones conectadas y el ERP.",
+    "impact.costs": "Menos costes",
+    "impact.costs.text": "Menos trabajo manual y menos errores se traducen en un ahorro real en todo el grupo.",
+    "impact.time": "Tiempo recuperado",
+    "impact.time.text": "Procesos más rápidos dejan a las personas libres para el trabajo que de verdad las necesita.",
+    "ai.title": "IA en cada proceso",
+    "ai.text": "El siguiente paso ya está en marcha: estamos integrando la inteligencia artificial en cada proceso para hacerlo más eficiente. Se encarga del trabajo repetitivo, ayuda a encontrar la información adecuada y prepara los datos para que las decisiones lleguen antes y mejor informadas.",
+    "ai.badge": "IA",
+    "ai.n1": "Proceso",
+    "ai.n2": "Datos",
+    "ai.n3": "Decisión",
+    "work.stack": "Cómo lo construimos",
+    "work.text": "Software para un grupo multiempresa: el ERP que mueve la operación y las aplicaciones web y móviles que la gente usa cada día.",
     "work.l1": "Aplicaciones web y móviles",
     "work.l2": "Servicios e integración",
     "work.l3": "Desarrollo del ERP",
@@ -80,8 +96,8 @@
   };
 
   const ROLES = {
-    en: ["Full stack developer @ Jisap", "Game streaming over WebRTC", "C++ · C# · TypeScript", "Dynamics AX & X++", "Angular & Ionic apps", "ESP32 & temperature sensing", "WebAssembly tinkerer"],
-    es: ["Desarrollador full stack @ Jisap", "Streaming de juegos por WebRTC", "C++ · C# · TypeScript", "Dynamics AX y X++", "Apps en Angular e Ionic", "ESP32 y sensores de temperatura", "Trasteando con WebAssembly"],
+    en: ["Full stack developer @ Jisap", "Digitalizing a livestock group", "AI in every process", "Game streaming over WebRTC", "C++ · C# · TypeScript", "Dynamics AX & X++", "Angular & Ionic apps", "ESP32 & temperature sensing", "WebAssembly tinkerer"],
+    es: ["Desarrollador full stack @ Jisap", "Digitalizando un grupo ganadero", "IA en cada proceso", "Streaming de juegos por WebRTC", "C++ · C# · TypeScript", "Dynamics AX y X++", "Apps en Angular e Ionic", "ESP32 y sensores de temperatura", "Trasteando con WebAssembly"],
   };
 
   const english = new Map();
