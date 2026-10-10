@@ -351,8 +351,7 @@ strong { color: #fff; font-weight: 600; }
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 16px;
-  width: min(1100px, calc(100% - 32px));
-  margin: 0 auto;
+  margin-top: 30px;
 }
 .stat {
   padding: 24px;

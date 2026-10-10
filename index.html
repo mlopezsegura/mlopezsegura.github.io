@@ -25,10 +25,10 @@
     </a>
     <nav class="nav-links" aria-label="Sections">
       <a href="#about" data-i18n="nav.about">About</a>
-      <a href="#projects" data-i18n="nav.projects">Projects</a>
-      <a href="#maker" data-i18n="nav.maker">Maker</a>
       <a href="#work" data-i18n="nav.work">Work</a>
       <a href="#skills" data-i18n="nav.skills">Skills</a>
+      <a href="#projects" data-i18n="nav.projects">Projects</a>
+      <a href="#maker" data-i18n="nav.maker">Maker</a>
       <a href="#contact" data-i18n="nav.contact">Contact</a>
     </nav>
     <button type="button" class="lang" id="lang" aria-label="Cambiar a español">ES</button>
@@ -64,26 +64,6 @@
       <a class="scroll-hint" href="#about" aria-label="Scroll"><span></span></a>
     </section>
 
-    <!-- Stats -->
-    <section class="stats">
-      <div class="stat reveal">
-        <span class="stat-value"><span class="count" data-to="4">0</span>K</span>
-        <span class="stat-label" data-i18n="stats.res">resolution streamed to a TV</span>
-      </div>
-      <div class="stat reveal">
-        <span class="stat-value"><span class="count" data-to="120">0</span></span>
-        <span class="stat-label" data-i18n="stats.fps">frames per second, with HDR</span>
-      </div>
-      <div class="stat reveal">
-        <span class="stat-value"><span class="count" data-to="3">0</span></span>
-        <span class="stat-label" data-i18n="stats.screens">screens: PC, TV and browser</span>
-      </div>
-      <div class="stat reveal">
-        <span class="stat-value"><span class="count" data-to="11" id="repo-count">0</span></span>
-        <span class="stat-label" data-i18n="stats.repos">public repositories</span>
-      </div>
-    </section>
-
     <!-- About -->
     <section class="section" id="about">
       <div class="section-head reveal">
@@ -103,267 +83,10 @@
       </div>
     </section>
 
-    <!-- Projects -->
-    <section class="section" id="projects">
-      <div class="section-head reveal">
-        <span class="section-index">02</span>
-        <h2 data-i18n="projects.title">Featured projects</h2>
-      </div>
-
-      <div class="pipeline reveal">
-        <div class="pipeline-copy">
-          <h3 data-i18n="pipeline.title">Moonlight WebRTC: a game, any screen</h3>
-          <p data-i18n="pipeline.text">Sunshine captures and encodes the game, then sends it over WebRTC straight to a Samsung TV or a web browser. No extra hop on the PC, so frames arrive sooner and more evenly.</p>
-        </div>
-        <svg class="pipeline-svg" viewBox="0 0 900 300" role="img" aria-labelledby="pipeline-title">
-          <title id="pipeline-title">Gaming PC streaming to a TV and a browser over WebRTC</title>
-          <defs>
-            <linearGradient id="g-line" x1="0" x2="1">
-              <stop offset="0" stop-color="#3ee0cf"/>
-              <stop offset="1" stop-color="#8b7bff"/>
-            </linearGradient>
-            <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
-              <feGaussianBlur stdDeviation="4" result="b"/>
-              <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
-            </filter>
-          </defs>
-
-          <!-- PC -->
-          <rect class="node" x="20" y="60" width="330" height="180" rx="18"/>
-          <text class="node-title" x="40" y="92">Gaming PC · Sunshine-Web-RTC</text>
-          <g class="stage s1"><rect x="40" y="120" width="88" height="70" rx="12"/><text x="84" y="161">Capture</text></g>
-          <g class="stage s2"><rect x="146" y="120" width="88" height="70" rx="12"/><text x="190" y="161">Encode</text></g>
-          <g class="stage s3"><rect x="252" y="120" width="80" height="70" rx="12"/><text x="292" y="161">WebRTC</text></g>
-          <text class="node-note" x="40" y="222">HEVC · AV1 · HDR · Opus</text>
-
-          <!-- Links -->
-          <path id="p-tv" class="link" d="M350 135 C 480 135, 520 70, 650 70"/>
-          <path id="p-web" class="link" d="M350 165 C 480 165, 520 230, 650 230"/>
-
-          <!-- TV -->
-          <rect class="node" x="650" y="20" width="230" height="110" rx="18"/>
-          <rect class="screen" x="672" y="42" width="120" height="66" rx="6"/>
-          <text class="node-title" x="806" y="70">Samsung</text>
-          <text class="node-title" x="806" y="90">Tizen TV</text>
-
-          <!-- Browser -->
-          <rect class="node" x="650" y="170" width="230" height="110" rx="18"/>
-          <rect class="screen" x="672" y="192" width="120" height="66" rx="6"/>
-          <circle class="dot" cx="682" cy="200" r="3"/><circle class="dot" cx="692" cy="200" r="3"/><circle class="dot" cx="702" cy="200" r="3"/>
-          <text class="node-title" x="806" y="220">Web</text>
-          <text class="node-title" x="806" y="240">browser</text>
-
-          <!-- Packets -->
-          <g filter="url(#glow)">
-            <rect class="packet" width="14" height="8" rx="3" x="-7" y="-4"><animateMotion dur="1.6s" repeatCount="indefinite" rotate="auto"><mpath href="#p-tv"/></animateMotion></rect>
-            <rect class="packet" width="14" height="8" rx="3" x="-7" y="-4"><animateMotion dur="1.6s" begin="0.4s" repeatCount="indefinite" rotate="auto"><mpath href="#p-tv"/></animateMotion></rect>
-            <rect class="packet" width="14" height="8" rx="3" x="-7" y="-4"><animateMotion dur="1.6s" begin="0.8s" repeatCount="indefinite" rotate="auto"><mpath href="#p-tv"/></animateMotion></rect>
-            <rect class="packet" width="14" height="8" rx="3" x="-7" y="-4"><animateMotion dur="1.6s" begin="1.2s" repeatCount="indefinite" rotate="auto"><mpath href="#p-tv"/></animateMotion></rect>
-            <rect class="packet alt" width="14" height="8" rx="3" x="-7" y="-4"><animateMotion dur="1.6s" begin="0.2s" repeatCount="indefinite" rotate="auto"><mpath href="#p-web"/></animateMotion></rect>
-            <rect class="packet alt" width="14" height="8" rx="3" x="-7" y="-4"><animateMotion dur="1.6s" begin="0.6s" repeatCount="indefinite" rotate="auto"><mpath href="#p-web"/></animateMotion></rect>
-            <rect class="packet alt" width="14" height="8" rx="3" x="-7" y="-4"><animateMotion dur="1.6s" begin="1.0s" repeatCount="indefinite" rotate="auto"><mpath href="#p-web"/></animateMotion></rect>
-            <rect class="packet alt" width="14" height="8" rx="3" x="-7" y="-4"><animateMotion dur="1.6s" begin="1.4s" repeatCount="indefinite" rotate="auto"><mpath href="#p-web"/></animateMotion></rect>
-          </g>
-        </svg>
-      </div>
-
-      <div class="cards">
-        <article class="card tilt reveal">
-          <div class="card-glow"></div>
-          <div class="card-top">
-            <span class="card-icon">🖥️</span>
-            <span class="card-lang">C++</span>
-          </div>
-          <h3>Sunshine-Web-RTC</h3>
-          <p data-i18n="p.sunshine">A Sunshine build with a WebRTC server inside. It captures, encodes and sends the game straight to TVs and browsers, without the GameStream round trip a separate gateway needed.</p>
-          <ul class="card-points">
-            <li data-i18n="p.sunshine.1">Encoder keyframes on demand, HEVC Main10 and AV1 10-bit HDR</li>
-            <li data-i18n="p.sunshine.2">Moonlight-style PIN pairing in Sunshine's Web UI</li>
-            <li data-i18n="p.sunshine.3">LAN discovery and Wake-on-LAN address announcement</li>
-          </ul>
-          <div class="tags"><span>C++</span><span>libdatachannel</span><span>WebRTC</span><span>CMake</span></div>
-          <a class="card-link" href="https://github.com/mlopezsegura/Sunshine-Web-RTC" target="_blank" rel="noopener" data-i18n="p.repo">View repository ↗</a>
-        </article>
-
-        <article class="card tilt reveal">
-          <div class="card-glow"></div>
-          <div class="card-top">
-            <span class="card-icon">📺</span>
-            <span class="card-lang">JavaScript · WASM</span>
-          </div>
-          <h3>Moonlight WebRTC for Samsung TVs</h3>
-          <p data-i18n="p.tizen">A TV-first app that plays PC games on Samsung Tizen TVs at up to 4K and 120 FPS with HDR, gamepads and rumble, decoded in hardware by the TV.</p>
-          <ul class="card-points">
-            <li data-i18n="p.tizen.1">Picks the highest frame rate the TV's decoder sustains</li>
-            <li data-i18n="p.tizen.2">Wake-on-LAN and PC discovery from a WebAssembly module</li>
-            <li data-i18n="p.tizen.3">Update notices from GitHub releases</li>
-          </ul>
-          <div class="tags"><span>Tizen</span><span>WebRTC</span><span>WebAssembly</span><span>Emscripten</span></div>
-          <a class="card-link" href="https://github.com/mlopezsegura/Monlight-Tizen-WebRtc-Client" target="_blank" rel="noopener" data-i18n="p.repo">View repository ↗</a>
-        </article>
-
-        <article class="card tilt reveal">
-          <div class="card-glow"></div>
-          <div class="card-top">
-            <span class="card-icon">🌐</span>
-            <span class="card-lang">JavaScript · C</span>
-          </div>
-          <h3>Moonlight WebRTC Web</h3>
-          <p data-i18n="p.web">Play in any desktop browser. Video goes through the browser's hardware WebRTC pipeline, while a 25 KB WebAssembly core handles authentication and gamepad input.</p>
-          <ul class="card-points">
-            <li data-i18n="p.web.1">Zero dependencies, nothing to install where you play</li>
-            <li data-i18n="p.web.2">Gamepad polling every 4 ms with no garbage collection pauses</li>
-            <li data-i18n="p.web.3">Picks only the codecs the browser can decode</li>
-          </ul>
-          <div class="tags"><span>WebAssembly</span><span>C</span><span>WebRTC</span><span>Gamepad API</span></div>
-          <a class="card-link" href="https://github.com/mlopezsegura/moonlight-webrtc-web" target="_blank" rel="noopener" data-i18n="p.repo">View repository ↗</a>
-        </article>
-
-        <article class="card tilt reveal">
-          <div class="card-glow"></div>
-          <div class="card-top">
-            <span class="card-icon">🎮</span>
-            <span class="card-lang">C# · .NET</span>
-          </div>
-          <h3>OpenStreamMS</h3>
-          <p data-i18n="p.osms">My personal project, an open multiseat alternative: a Windows service that runs isolated game streaming sessions, each with its own Windows user, RDP session and Sunshine instance.</p>
-          <ul class="card-points">
-            <li data-i18n="p.osms.1">Web dashboard and REST API with OpenAPI docs</li>
-            <li data-i18n="p.osms.2">Restarts Sunshine automatically if it crashes</li>
-            <li data-i18n="p.osms.3">Virtual display support, tray icon and installer</li>
-            <li data-i18n="p.osms.4">An idea that started in 2010: see its story below</li>
-          </ul>
-          <div class="tags"><span>.NET 10</span><span>ASP.NET Core</span><span>Windows service</span><span>RDP</span></div>
-          <a class="card-link" href="https://github.com/mlopezsegura/OpenStreamMS" target="_blank" rel="noopener" data-i18n="p.repo">View repository ↗</a>
-        </article>
-      </div>
-
-      <div class="story reveal" id="openstream-story">
-        <div class="story-head">
-          <span class="ai-badge story-badge" data-i18n="story.badge">Personal project</span>
-          <h3 data-i18n="story.title">The OpenStream story</h3>
-          <p data-i18n="story.intro">OpenStream is my own personal project, and the idea is older than it looks: one PC shared by several people at the same time, each with their own screen, keyboard and games.</p>
-        </div>
-        <ol class="timeline">
-          <li class="moment">
-            <span class="moment-dot"></span>
-            <span class="moment-when" data-i18n="story.1.when">Early 2010</span>
-            <h4 data-i18n="story.1.title">The spark</h4>
-            <p data-i18n="story.1.text">The idea was born while using <strong>ASTER</strong>, a multiseat software that lets several users work on one computer at once. Seeing it run made me want to build something like it myself.</p>
-          </li>
-          <li class="moment">
-            <span class="moment-dot"></span>
-            <span class="moment-when" data-i18n="story.2.when">The revival</span>
-            <h4 data-i18n="story.2.title">Castor and DuoStream</h4>
-            <p data-i18n="story.2.text">Years later the idea came back to life with <strong>Castor</strong> and <strong>DuoStream</strong>, which brought multiseat to game streaming. Studying how they work taught me how to build OpenStream.</p>
-          </li>
-          <li class="moment now">
-            <span class="moment-dot"></span>
-            <span class="moment-when" data-i18n="story.3.when">Today</span>
-            <h4>OpenStreamMS</h4>
-            <p data-i18n="story.3.text">A Windows service in C# and .NET 10 that runs isolated streaming sessions on one PC, each with its own Windows user, RDP session and Sunshine instance, managed from a web dashboard.</p>
-          </li>
-        </ol>
-        <p class="disclaimer" data-i18n="story.note">ASTER is an external brand that belongs to its owner. I have no relationship with ASTER or its developers. Castor and DuoStream belong to their respective authors.</p>
-      </div>
-    </section>
-
-    <!-- Maker -->
-    <section class="section" id="maker">
-      <div class="section-head reveal">
-        <span class="section-index">03</span>
-        <h2 data-i18n="maker.title">Maker corner</h2>
-      </div>
-      <div class="maker">
-        <div class="maker-copy reveal">
-          <p data-i18n="maker.p1">Away from the big screens, I love building small things that measure the world and talk to each other. <strong>ESP32</strong> and <strong>Arduino</strong> boards are my playground, and <strong>temperature sensing</strong> is my favourite use for them: reading sensors and sending the data over Wi-Fi or Bluetooth.</p>
-          <p data-i18n="maker.p2">I program them in <strong>C++</strong> when every byte and microsecond counts, and in <strong>MicroPython</strong> when I want to try an idea in minutes straight from the REPL.</p>
-          <ul class="card-points">
-            <li data-i18n="maker.l1">Temperature sensing in general, from the sensor to the reading</li>
-            <li data-i18n="maker.l2">ESP32 boards that send their readings over Wi-Fi and Bluetooth</li>
-            <li data-i18n="maker.l3">The same idea in C++ or MicroPython, whichever fits</li>
-          </ul>
-          <div class="tags"><span>ESP32</span><span>Arduino</span><span>C++</span><span>MicroPython</span><span data-i18n="maker.tag">Temperature sensors</span><span>GPIO · I²C · 1-Wire</span><span>Wi-Fi · BLE</span></div>
-        </div>
-
-        <div class="board-wrap reveal">
-          <svg class="board" viewBox="0 -30 420 430" role="img" aria-labelledby="board-title">
-            <title id="board-title">An ESP32 board reading a temperature sensor and sending the data over Wi-Fi</title>
-            <g class="waves" fill="none" stroke-linecap="round">
-              <path class="wave w1" d="M130 38 Q160 18 190 38"/>
-              <path class="wave w2" d="M115 26 Q160 -4 205 26"/>
-              <path class="wave w3" d="M100 14 Q160 -26 220 14"/>
-            </g>
-            <rect class="pcb" x="60" y="50" width="200" height="340" rx="14"/>
-            <g class="pins">
-              <circle cx="76" cy="150" r="5"/><circle cx="76" cy="172" r="5"/><circle cx="76" cy="194" r="5"/><circle cx="76" cy="216" r="5"/><circle cx="76" cy="238" r="5"/><circle cx="76" cy="260" r="5"/><circle cx="76" cy="282" r="5"/><circle cx="76" cy="304" r="5"/><circle cx="76" cy="326" r="5"/><circle cx="76" cy="348" r="5"/>
-              <circle cx="244" cy="150" r="5"/><circle cx="244" cy="172" r="5"/><circle cx="244" cy="194" r="5"/><circle cx="244" cy="216" r="5"/><circle cx="244" cy="238" r="5"/><circle cx="244" cy="260" r="5"/><circle cx="244" cy="282" r="5"/><circle cx="244" cy="304" r="5"/><circle cx="244" cy="326" r="5"/><circle cx="244" cy="348" r="5"/>
-            </g>
-            <rect class="module" x="96" y="62" width="128" height="150" rx="6"/>
-            <path class="antenna" d="M108 74 h20 v14 h16 v-14 h16 v14 h16 v-14 h16 v14 h12" fill="none"/>
-            <rect class="shield" x="104" y="104" width="112" height="98" rx="4"/>
-            <text class="chip-label" x="160" y="146">ESP32</text>
-            <text class="chip-sub" x="160" y="166">WROOM-32</text>
-            <text class="chip-sub" x="160" y="184">Wi-Fi · BT</text>
-            <path class="trace" d="M120 212 V 250 H 86"/>
-            <path class="trace" d="M200 212 V 270 H 234"/>
-            <path class="trace" d="M160 212 V 290"/>
-            <rect class="smd" x="118" y="300" width="20" height="12" rx="2"/>
-            <circle class="led-glow" cx="128" cy="306" r="16"/>
-            <circle class="led" cx="128" cy="306" r="5"/>
-            <text class="pin-label" x="128" y="334">GPIO2</text>
-            <rect class="button" x="170" y="296" width="22" height="22" rx="4"/><circle class="button-cap" cx="181" cy="307" r="6"/>
-            <text class="pin-label" x="181" y="334">BOOT</text>
-            <rect class="usb" x="138" y="372" width="44" height="26" rx="4"/>
-            <path class="wire" d="M244 216 H 290 V 236 H 316"/>
-            <text class="pin-label" x="270" y="208">GPIO4</text>
-            <g class="sensor">
-              <rect x="316" y="196" width="72" height="96" rx="8"/>
-              <g class="slots"><rect x="328" y="208" width="48" height="6" rx="3"/><rect x="328" y="220" width="48" height="6" rx="3"/><rect x="328" y="232" width="48" height="6" rx="3"/><rect x="328" y="244" width="48" height="6" rx="3"/></g>
-              <text class="sensor-label" x="352" y="272">DHT22</text>
-            </g>
-            <g class="heat"><circle cx="352" cy="190" r="4"/><circle cx="364" cy="190" r="3"/><circle cx="340" cy="190" r="3"/></g>
-            <text class="temp" id="board-temp" x="352" y="320">23.4 °C</text>
-          </svg>
-          <div class="serial" aria-hidden="true"><span class="serial-title">Serial · 115200 · DHT22</span><span class="serial-lines" id="serial-lines"></span></div>
-        </div>
-      </div>
-
-      <div class="code-tabs reveal">
-        <div class="tab-list" role="tablist" aria-label="Temperature sensor example">
-          <button type="button" role="tab" id="tab-cpp" aria-controls="code-cpp" aria-selected="true">C++ · Arduino</button>
-          <button type="button" role="tab" id="tab-py" aria-controls="code-py" aria-selected="false" tabindex="-1">MicroPython</button>
-        </div>
-        <pre class="code" id="code-cpp" role="tabpanel" aria-labelledby="tab-cpp"><code><span class="kw">#include</span> <span class="str">&lt;DHT.h&gt;</span>
-
-DHT <span class="fn">sensor</span>(<span class="num">4</span>, DHT22);   <span class="cm">// data pin on GPIO4</span>
-
-<span class="kw">void</span> <span class="fn">setup</span>() {
-  Serial.<span class="fn">begin</span>(<span class="num">115200</span>);
-  sensor.<span class="fn">begin</span>();
-}
-
-<span class="kw">void</span> <span class="fn">loop</span>() {
-  <span class="kw">float</span> celsius = sensor.<span class="fn">readTemperature</span>();
-  Serial.<span class="fn">printf</span>(<span class="str">"%.1f °C\n"</span>, celsius);
-  <span class="fn">delay</span>(<span class="num">2000</span>);
-}</code></pre>
-        <pre class="code" id="code-py" role="tabpanel" aria-labelledby="tab-py" hidden><code><span class="kw">from</span> machine <span class="kw">import</span> Pin
-<span class="kw">import</span> dht, time
-
-sensor = dht.<span class="fn">DHT22</span>(<span class="fn">Pin</span>(<span class="num">4</span>))   <span class="cm"># data pin on GPIO4</span>
-
-<span class="kw">while</span> <span class="kw">True</span>:
-    sensor.<span class="fn">measure</span>()
-    <span class="fn">print</span>(<span class="str">"%.1f °C"</span> % sensor.<span class="fn">temperature</span>())
-    time.<span class="fn">sleep</span>(<span class="num">2</span>)</code></pre>
-      </div>
-    </section>
-
     <!-- Work -->
     <section class="section" id="work">
       <div class="section-head reveal">
-        <span class="section-index">04</span>
+        <span class="section-index">02</span>
         <h2 data-i18n="work.title">Work at Grupo Jisap</h2>
       </div>
       <div class="company reveal">
@@ -514,7 +237,7 @@ sensor = dht.<span class="fn">DHT22</span>(<span class="fn">Pin</span>(<span cla
     <!-- Skills -->
     <section class="section" id="skills">
       <div class="section-head reveal">
-        <span class="section-index">05</span>
+        <span class="section-index">03</span>
         <h2 data-i18n="skills.title">Toolbox</h2>
       </div>
       <div class="marquee" aria-hidden="true">
@@ -543,14 +266,290 @@ sensor = dht.<span class="fn">DHT22</span>(<span class="fn">Pin</span>(<span cla
       </div>
     </section>
 
+    <!-- Projects -->
+    <section class="section" id="projects">
+      <div class="section-head reveal">
+        <span class="section-index">04</span>
+        <h2 data-i18n="projects.title">Featured projects</h2>
+      </div>
+
+      <div class="pipeline reveal">
+        <div class="pipeline-copy">
+          <h3 data-i18n="pipeline.title">Moonlight WebRTC: a game, any screen</h3>
+          <p data-i18n="pipeline.text">Sunshine captures and encodes the game, then sends it over WebRTC straight to a Samsung TV or a web browser. No extra hop on the PC, so frames arrive sooner and more evenly.</p>
+        </div>
+        <svg class="pipeline-svg" viewBox="0 0 900 300" role="img" aria-labelledby="pipeline-title">
+          <title id="pipeline-title">Gaming PC streaming to a TV and a browser over WebRTC</title>
+          <defs>
+            <linearGradient id="g-line" x1="0" x2="1">
+              <stop offset="0" stop-color="#3ee0cf"/>
+              <stop offset="1" stop-color="#8b7bff"/>
+            </linearGradient>
+            <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+              <feGaussianBlur stdDeviation="4" result="b"/>
+              <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+            </filter>
+          </defs>
+
+          <!-- PC -->
+          <rect class="node" x="20" y="60" width="330" height="180" rx="18"/>
+          <text class="node-title" x="40" y="92">Gaming PC · Sunshine-Web-RTC</text>
+          <g class="stage s1"><rect x="40" y="120" width="88" height="70" rx="12"/><text x="84" y="161">Capture</text></g>
+          <g class="stage s2"><rect x="146" y="120" width="88" height="70" rx="12"/><text x="190" y="161">Encode</text></g>
+          <g class="stage s3"><rect x="252" y="120" width="80" height="70" rx="12"/><text x="292" y="161">WebRTC</text></g>
+          <text class="node-note" x="40" y="222">HEVC · AV1 · HDR · Opus</text>
+
+          <!-- Links -->
+          <path id="p-tv" class="link" d="M350 135 C 480 135, 520 70, 650 70"/>
+          <path id="p-web" class="link" d="M350 165 C 480 165, 520 230, 650 230"/>
+
+          <!-- TV -->
+          <rect class="node" x="650" y="20" width="230" height="110" rx="18"/>
+          <rect class="screen" x="672" y="42" width="120" height="66" rx="6"/>
+          <text class="node-title" x="806" y="70">Samsung</text>
+          <text class="node-title" x="806" y="90">Tizen TV</text>
+
+          <!-- Browser -->
+          <rect class="node" x="650" y="170" width="230" height="110" rx="18"/>
+          <rect class="screen" x="672" y="192" width="120" height="66" rx="6"/>
+          <circle class="dot" cx="682" cy="200" r="3"/><circle class="dot" cx="692" cy="200" r="3"/><circle class="dot" cx="702" cy="200" r="3"/>
+          <text class="node-title" x="806" y="220">Web</text>
+          <text class="node-title" x="806" y="240">browser</text>
+
+          <!-- Packets -->
+          <g filter="url(#glow)">
+            <rect class="packet" width="14" height="8" rx="3" x="-7" y="-4"><animateMotion dur="1.6s" repeatCount="indefinite" rotate="auto"><mpath href="#p-tv"/></animateMotion></rect>
+            <rect class="packet" width="14" height="8" rx="3" x="-7" y="-4"><animateMotion dur="1.6s" begin="0.4s" repeatCount="indefinite" rotate="auto"><mpath href="#p-tv"/></animateMotion></rect>
+            <rect class="packet" width="14" height="8" rx="3" x="-7" y="-4"><animateMotion dur="1.6s" begin="0.8s" repeatCount="indefinite" rotate="auto"><mpath href="#p-tv"/></animateMotion></rect>
+            <rect class="packet" width="14" height="8" rx="3" x="-7" y="-4"><animateMotion dur="1.6s" begin="1.2s" repeatCount="indefinite" rotate="auto"><mpath href="#p-tv"/></animateMotion></rect>
+            <rect class="packet alt" width="14" height="8" rx="3" x="-7" y="-4"><animateMotion dur="1.6s" begin="0.2s" repeatCount="indefinite" rotate="auto"><mpath href="#p-web"/></animateMotion></rect>
+            <rect class="packet alt" width="14" height="8" rx="3" x="-7" y="-4"><animateMotion dur="1.6s" begin="0.6s" repeatCount="indefinite" rotate="auto"><mpath href="#p-web"/></animateMotion></rect>
+            <rect class="packet alt" width="14" height="8" rx="3" x="-7" y="-4"><animateMotion dur="1.6s" begin="1.0s" repeatCount="indefinite" rotate="auto"><mpath href="#p-web"/></animateMotion></rect>
+            <rect class="packet alt" width="14" height="8" rx="3" x="-7" y="-4"><animateMotion dur="1.6s" begin="1.4s" repeatCount="indefinite" rotate="auto"><mpath href="#p-web"/></animateMotion></rect>
+          </g>
+        </svg>
+      </div>
+
+      <div class="cards">
+        <article class="card tilt reveal">
+          <div class="card-glow"></div>
+          <div class="card-top">
+            <span class="card-icon">🖥️</span>
+            <span class="card-lang">C++</span>
+          </div>
+          <h3>Sunshine-Web-RTC</h3>
+          <p data-i18n="p.sunshine">A Sunshine build with a WebRTC server inside. It captures, encodes and sends the game straight to TVs and browsers, without the GameStream round trip a separate gateway needed.</p>
+          <ul class="card-points">
+            <li data-i18n="p.sunshine.1">Encoder keyframes on demand, HEVC Main10 and AV1 10-bit HDR</li>
+            <li data-i18n="p.sunshine.2">Moonlight-style PIN pairing in Sunshine's Web UI</li>
+            <li data-i18n="p.sunshine.3">LAN discovery and Wake-on-LAN address announcement</li>
+          </ul>
+          <div class="tags"><span>C++</span><span>libdatachannel</span><span>WebRTC</span><span>CMake</span></div>
+          <a class="card-link" href="https://github.com/mlopezsegura/Sunshine-Web-RTC" target="_blank" rel="noopener" data-i18n="p.repo">View repository ↗</a>
+        </article>
+
+        <article class="card tilt reveal">
+          <div class="card-glow"></div>
+          <div class="card-top">
+            <span class="card-icon">📺</span>
+            <span class="card-lang">JavaScript · WASM</span>
+          </div>
+          <h3>Moonlight WebRTC for Samsung TVs</h3>
+          <p data-i18n="p.tizen">A TV-first app that plays PC games on Samsung Tizen TVs at up to 4K and 120 FPS with HDR, gamepads and rumble, decoded in hardware by the TV.</p>
+          <ul class="card-points">
+            <li data-i18n="p.tizen.1">Picks the highest frame rate the TV's decoder sustains</li>
+            <li data-i18n="p.tizen.2">Wake-on-LAN and PC discovery from a WebAssembly module</li>
+            <li data-i18n="p.tizen.3">Update notices from GitHub releases</li>
+          </ul>
+          <div class="tags"><span>Tizen</span><span>WebRTC</span><span>WebAssembly</span><span>Emscripten</span></div>
+          <a class="card-link" href="https://github.com/mlopezsegura/Monlight-Tizen-WebRtc-Client" target="_blank" rel="noopener" data-i18n="p.repo">View repository ↗</a>
+        </article>
+
+        <article class="card tilt reveal">
+          <div class="card-glow"></div>
+          <div class="card-top">
+            <span class="card-icon">🌐</span>
+            <span class="card-lang">JavaScript · C</span>
+          </div>
+          <h3>Moonlight WebRTC Web</h3>
+          <p data-i18n="p.web">Play in any desktop browser. Video goes through the browser's hardware WebRTC pipeline, while a 25 KB WebAssembly core handles authentication and gamepad input.</p>
+          <ul class="card-points">
+            <li data-i18n="p.web.1">Zero dependencies, nothing to install where you play</li>
+            <li data-i18n="p.web.2">Gamepad polling every 4 ms with no garbage collection pauses</li>
+            <li data-i18n="p.web.3">Picks only the codecs the browser can decode</li>
+          </ul>
+          <div class="tags"><span>WebAssembly</span><span>C</span><span>WebRTC</span><span>Gamepad API</span></div>
+          <a class="card-link" href="https://github.com/mlopezsegura/moonlight-webrtc-web" target="_blank" rel="noopener" data-i18n="p.repo">View repository ↗</a>
+        </article>
+
+        <article class="card tilt reveal">
+          <div class="card-glow"></div>
+          <div class="card-top">
+            <span class="card-icon">🎮</span>
+            <span class="card-lang">C# · .NET</span>
+          </div>
+          <h3>OpenStreamMS</h3>
+          <p data-i18n="p.osms">My personal project, an open multiseat alternative: a Windows service that runs isolated game streaming sessions, each with its own Windows user, RDP session and Sunshine instance.</p>
+          <ul class="card-points">
+            <li data-i18n="p.osms.1">Web dashboard and REST API with OpenAPI docs</li>
+            <li data-i18n="p.osms.2">Restarts Sunshine automatically if it crashes</li>
+            <li data-i18n="p.osms.3">Virtual display support, tray icon and installer</li>
+            <li data-i18n="p.osms.4">An idea that started in 2010: see its story below</li>
+          </ul>
+          <div class="tags"><span>.NET 10</span><span>ASP.NET Core</span><span>Windows service</span><span>RDP</span></div>
+          <a class="card-link" href="https://github.com/mlopezsegura/OpenStreamMS" target="_blank" rel="noopener" data-i18n="p.repo">View repository ↗</a>
+        </article>
+      </div>
+
+      <div class="stats">
+        <div class="stat reveal">
+          <span class="stat-value"><span class="count" data-to="4">0</span>K</span>
+          <span class="stat-label" data-i18n="stats.res">resolution streamed to a TV</span>
+        </div>
+        <div class="stat reveal">
+          <span class="stat-value"><span class="count" data-to="120">0</span></span>
+          <span class="stat-label" data-i18n="stats.fps">frames per second, with HDR</span>
+        </div>
+        <div class="stat reveal">
+          <span class="stat-value"><span class="count" data-to="3">0</span></span>
+          <span class="stat-label" data-i18n="stats.screens">screens: PC, TV and browser</span>
+        </div>
+        <div class="stat reveal">
+          <span class="stat-value"><span class="count" data-to="11" id="repo-count">0</span></span>
+          <span class="stat-label" data-i18n="stats.repos">public repositories</span>
+        </div>
+      </div>
+
+      <div class="story reveal" id="openstream-story">
+        <div class="story-head">
+          <span class="ai-badge story-badge" data-i18n="story.badge">Personal project</span>
+          <h3 data-i18n="story.title">The OpenStream story</h3>
+          <p data-i18n="story.intro">OpenStream is my own personal project, and the idea is older than it looks: one PC shared by several people at the same time, each with their own screen, keyboard and games.</p>
+        </div>
+        <ol class="timeline">
+          <li class="moment">
+            <span class="moment-dot"></span>
+            <span class="moment-when" data-i18n="story.1.when">Early 2010</span>
+            <h4 data-i18n="story.1.title">The spark</h4>
+            <p data-i18n="story.1.text">The idea was born while using <strong>ASTER</strong>, a multiseat software that lets several users work on one computer at once. Seeing it run made me want to build something like it myself.</p>
+          </li>
+          <li class="moment">
+            <span class="moment-dot"></span>
+            <span class="moment-when" data-i18n="story.2.when">The revival</span>
+            <h4 data-i18n="story.2.title">Castor and DuoStream</h4>
+            <p data-i18n="story.2.text">Years later the idea came back to life with <strong>Castor</strong> and <strong>DuoStream</strong>, which brought multiseat to game streaming. Studying how they work taught me how to build OpenStream.</p>
+          </li>
+          <li class="moment now">
+            <span class="moment-dot"></span>
+            <span class="moment-when" data-i18n="story.3.when">Today</span>
+            <h4>OpenStreamMS</h4>
+            <p data-i18n="story.3.text">A Windows service in C# and .NET 10 that runs isolated streaming sessions on one PC, each with its own Windows user, RDP session and Sunshine instance, managed from a web dashboard.</p>
+          </li>
+        </ol>
+        <p class="disclaimer" data-i18n="story.note">ASTER is an external brand that belongs to its owner. I have no relationship with ASTER or its developers. Castor and DuoStream belong to their respective authors.</p>
+      </div>
+    </section>
+
     <!-- GitHub -->
     <section class="section" id="github">
       <div class="section-head reveal">
-        <span class="section-index">06</span>
+        <span class="section-index">05</span>
         <h2 data-i18n="gh.title">Latest on GitHub</h2>
       </div>
       <div class="repos" id="repos">
         <p class="muted" data-i18n="gh.loading">Loading repositories…</p>
+      </div>
+    </section>
+
+    <!-- Maker -->
+    <section class="section" id="maker">
+      <div class="section-head reveal">
+        <span class="section-index">06</span>
+        <h2 data-i18n="maker.title">Maker corner</h2>
+      </div>
+      <div class="maker">
+        <div class="maker-copy reveal">
+          <p data-i18n="maker.p1">Away from the big screens, I love building small things that measure the world and talk to each other. <strong>ESP32</strong> and <strong>Arduino</strong> boards are my playground, and <strong>temperature sensing</strong> is my favourite use for them: reading sensors and sending the data over Wi-Fi or Bluetooth.</p>
+          <p data-i18n="maker.p2">I program them in <strong>C++</strong> when every byte and microsecond counts, and in <strong>MicroPython</strong> when I want to try an idea in minutes straight from the REPL.</p>
+          <ul class="card-points">
+            <li data-i18n="maker.l1">Temperature sensing in general, from the sensor to the reading</li>
+            <li data-i18n="maker.l2">ESP32 boards that send their readings over Wi-Fi and Bluetooth</li>
+            <li data-i18n="maker.l3">The same idea in C++ or MicroPython, whichever fits</li>
+          </ul>
+          <div class="tags"><span>ESP32</span><span>Arduino</span><span>C++</span><span>MicroPython</span><span data-i18n="maker.tag">Temperature sensors</span><span>GPIO · I²C · 1-Wire</span><span>Wi-Fi · BLE</span></div>
+        </div>
+
+        <div class="board-wrap reveal">
+          <svg class="board" viewBox="0 -30 420 430" role="img" aria-labelledby="board-title">
+            <title id="board-title">An ESP32 board reading a temperature sensor and sending the data over Wi-Fi</title>
+            <g class="waves" fill="none" stroke-linecap="round">
+              <path class="wave w1" d="M130 38 Q160 18 190 38"/>
+              <path class="wave w2" d="M115 26 Q160 -4 205 26"/>
+              <path class="wave w3" d="M100 14 Q160 -26 220 14"/>
+            </g>
+            <rect class="pcb" x="60" y="50" width="200" height="340" rx="14"/>
+            <g class="pins">
+              <circle cx="76" cy="150" r="5"/><circle cx="76" cy="172" r="5"/><circle cx="76" cy="194" r="5"/><circle cx="76" cy="216" r="5"/><circle cx="76" cy="238" r="5"/><circle cx="76" cy="260" r="5"/><circle cx="76" cy="282" r="5"/><circle cx="76" cy="304" r="5"/><circle cx="76" cy="326" r="5"/><circle cx="76" cy="348" r="5"/>
+              <circle cx="244" cy="150" r="5"/><circle cx="244" cy="172" r="5"/><circle cx="244" cy="194" r="5"/><circle cx="244" cy="216" r="5"/><circle cx="244" cy="238" r="5"/><circle cx="244" cy="260" r="5"/><circle cx="244" cy="282" r="5"/><circle cx="244" cy="304" r="5"/><circle cx="244" cy="326" r="5"/><circle cx="244" cy="348" r="5"/>
+            </g>
+            <rect class="module" x="96" y="62" width="128" height="150" rx="6"/>
+            <path class="antenna" d="M108 74 h20 v14 h16 v-14 h16 v14 h16 v-14 h16 v14 h12" fill="none"/>
+            <rect class="shield" x="104" y="104" width="112" height="98" rx="4"/>
+            <text class="chip-label" x="160" y="146">ESP32</text>
+            <text class="chip-sub" x="160" y="166">WROOM-32</text>
+            <text class="chip-sub" x="160" y="184">Wi-Fi · BT</text>
+            <path class="trace" d="M120 212 V 250 H 86"/>
+            <path class="trace" d="M200 212 V 270 H 234"/>
+            <path class="trace" d="M160 212 V 290"/>
+            <rect class="smd" x="118" y="300" width="20" height="12" rx="2"/>
+            <circle class="led-glow" cx="128" cy="306" r="16"/>
+            <circle class="led" cx="128" cy="306" r="5"/>
+            <text class="pin-label" x="128" y="334">GPIO2</text>
+            <rect class="button" x="170" y="296" width="22" height="22" rx="4"/><circle class="button-cap" cx="181" cy="307" r="6"/>
+            <text class="pin-label" x="181" y="334">BOOT</text>
+            <rect class="usb" x="138" y="372" width="44" height="26" rx="4"/>
+            <path class="wire" d="M244 216 H 290 V 236 H 316"/>
+            <text class="pin-label" x="270" y="208">GPIO4</text>
+            <g class="sensor">
+              <rect x="316" y="196" width="72" height="96" rx="8"/>
+              <g class="slots"><rect x="328" y="208" width="48" height="6" rx="3"/><rect x="328" y="220" width="48" height="6" rx="3"/><rect x="328" y="232" width="48" height="6" rx="3"/><rect x="328" y="244" width="48" height="6" rx="3"/></g>
+              <text class="sensor-label" x="352" y="272">DHT22</text>
+            </g>
+            <g class="heat"><circle cx="352" cy="190" r="4"/><circle cx="364" cy="190" r="3"/><circle cx="340" cy="190" r="3"/></g>
+            <text class="temp" id="board-temp" x="352" y="320">23.4 °C</text>
+          </svg>
+          <div class="serial" aria-hidden="true"><span class="serial-title">Serial · 115200 · DHT22</span><span class="serial-lines" id="serial-lines"></span></div>
+        </div>
+      </div>
+
+      <div class="code-tabs reveal">
+        <div class="tab-list" role="tablist" aria-label="Temperature sensor example">
+          <button type="button" role="tab" id="tab-cpp" aria-controls="code-cpp" aria-selected="true">C++ · Arduino</button>
+          <button type="button" role="tab" id="tab-py" aria-controls="code-py" aria-selected="false" tabindex="-1">MicroPython</button>
+        </div>
+        <pre class="code" id="code-cpp" role="tabpanel" aria-labelledby="tab-cpp"><code><span class="kw">#include</span> <span class="str">&lt;DHT.h&gt;</span>
+
+DHT <span class="fn">sensor</span>(<span class="num">4</span>, DHT22);   <span class="cm">// data pin on GPIO4</span>
+
+<span class="kw">void</span> <span class="fn">setup</span>() {
+  Serial.<span class="fn">begin</span>(<span class="num">115200</span>);
+  sensor.<span class="fn">begin</span>();
+}
+
+<span class="kw">void</span> <span class="fn">loop</span>() {
+  <span class="kw">float</span> celsius = sensor.<span class="fn">readTemperature</span>();
+  Serial.<span class="fn">printf</span>(<span class="str">"%.1f °C\n"</span>, celsius);
+  <span class="fn">delay</span>(<span class="num">2000</span>);
+}</code></pre>
+        <pre class="code" id="code-py" role="tabpanel" aria-labelledby="tab-py" hidden><code><span class="kw">from</span> machine <span class="kw">import</span> Pin
+<span class="kw">import</span> dht, time
+
+sensor = dht.<span class="fn">DHT22</span>(<span class="fn">Pin</span>(<span class="num">4</span>))   <span class="cm"># data pin on GPIO4</span>
+
+<span class="kw">while</span> <span class="kw">True</span>:
+    sensor.<span class="fn">measure</span>()
+    <span class="fn">print</span>(<span class="str">"%.1f °C"</span> % sensor.<span class="fn">temperature</span>())
+    time.<span class="fn">sleep</span>(<span class="num">2</span>)</code></pre>
       </div>
     </section>
 
